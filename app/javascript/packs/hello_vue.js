@@ -3,14 +3,40 @@
 import Vue from 'vue/dist/vue.esm'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
+import L from 'leaflet'
+import 'leaflet/dist/leaflet.css'
 
 Vue.use(Vuetify)
 
 document.addEventListener('DOMContentLoaded', () => {
-  const app = new Vue({
-    el: '#app',
+  const app =  new Vue({
+    el: "#app",
     data: {
-      message: "Can you say hello?"
+      drawer: false
+    },
+    props: {
+      source: String
+    },
+    methods: {
+      toggleNavigationDrawer: function (event) {
+        this.drawer = !this.drawer;
+        setTimeout(function() {
+          map.invalidateSize(true)
+        }, 200);
+      },
+      focusTown: function (event) {
+        map.setView([47.6623, 23.6970], 15);
+      },
+      focusChurch: function (event) {
+        map.setView([47.66283, 23.69984], 18);
+      }
     }
-  })
+  });
+
+  var map = L.map("map", { maxZoom: 19, trackResize: false }).setView([47.6623, 23.6970], 15);
+  var tileLayer = L.tileLayer("//tileserver.link7.ro/hot/{z}/{x}/{y}.png", {
+    attribution: '&copy; Contributori <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 20
+  });
+  tileLayer.addTo(map);
 })
