@@ -1,5 +1,5 @@
 {
-  "name": "maramures",
+  "name": "turistic",
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
