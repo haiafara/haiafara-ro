@@ -1,1 +1,9 @@
 language: ruby
+addons:
+  postgresql: 9.6
+  apt:
+    packages:
+    - postgresql-9.6-postgis-2.3
+before_script:
+  - psql -U postgres -c 'CREATE DATABASE turistic_test;'
+  - psql -U postgres -c 'CREATE EXTENSION postgis;'
