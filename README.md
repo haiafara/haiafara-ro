@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/turistic-ro/turistic-ro.svg?branch=master)](https://travis-ci.org/turistic-ro/turistic-ro)
+# turistic
 
-# README
+[![Build Status](https://travis-ci.org/turistic-ro/turistic-ro.svg?branch=master)](https://travis-ci.org/turistic-ro/turistic-ro)
 
 ## Install or update Node.js
 
