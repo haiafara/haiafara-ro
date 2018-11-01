@@ -15,6 +15,6 @@ install:
   - npm i -g yarn
   - yarn
 script:
-  - bundle exec rails db:create
+  - bundle exec rails db:setup
   - bundle exec rails webpacker:compile
   - bundle exec rails test
