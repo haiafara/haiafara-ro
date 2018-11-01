@@ -6,18 +6,15 @@ addons:
     - postgresql-9.6-postgis-2.3
 cache:
   bundler: true
+  yarn: true
   directories:
     - node_modules
-  yarn: true
-before_script:
-  - psql -U postgres -c 'CREATE DATABASE turistic_test;'
-  - psql -U postgres -c 'CREATE EXTENSION postgis;'
 install:
   - bundle install
   - nvm install node
-  - node -v
   - npm i -g yarn
   - yarn
 script:
+  - bundle exec rails db:create
   - bundle exec rails webpacker:compile
   - bundle exec rails test
