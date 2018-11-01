@@ -9,4 +9,12 @@
 
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-    sudo apt-get update && sudo apt-get install yarn
+    sudo apt update && sudo apt install yarn
+
+## Set up PostgreSQL and PostGIS
+
+    sudo apt install libpq-dev postgis
+    sudo -u postgres createuser <user>
+    sudo su - postgres
+    psql
+    ALTER USER <user> WITH SUPERUSER;
