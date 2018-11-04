@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   var map = L.map("map", { maxZoom: 20, trackResize: false }).setView([47.6623, 23.6970], 15);
   var tileLayer = L.tileLayer("//tileserver.link7.ro/hot/{z}/{x}/{y}.png", {
-    attribution: '&copy; Contributori <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    attribution: '&copy; Contribuitori <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     maxZoom: 20
   });
   tileLayer.addTo(map);
