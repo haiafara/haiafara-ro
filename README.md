@@ -1,6 +1,6 @@
 # turistic
 
-[![Build Status](https://travis-ci.org/turistic-ro/turistic-ro.svg?branch=master)](https://travis-ci.org/turistic-ro/turistic-ro)
+[![Build Status](https://travis-ci.org/haiafara/haiafara-ro.svg?branch=master)](https://travis-ci.org/haiafara/haiafara-ro)
 
 ## Install or update Node.js
 
