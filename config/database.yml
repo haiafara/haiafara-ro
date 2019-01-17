@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: turistic_production
-  username: turistic
-  password: <%= ENV['TURISTIC_DATABASE_PASSWORD'] %>
