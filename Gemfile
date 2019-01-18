@@ -42,6 +42,9 @@ gem 'mina'
 gem 'loofah', '>= 2.2.3'
 gem 'rack', '>= 2.0.6'
 
+# my gem
+gem 'friendly_id', '~> 5.2.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
