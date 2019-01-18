@@ -9,6 +9,8 @@ Vue.use(Vuetify)
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
+var map;
+
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
     el: "#app",
@@ -31,13 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
       focusChurch: function (event) {
         map.setView([47.66283, 23.69984], 18);
       }
+    },
+    mounted: function() {
+      this.$nextTick(function () {
+        map = L.map("map", { maxZoom: 20, trackResize: false }).setView([47.6623, 23.6970], 15);
+        var tileLayer = L.tileLayer("//tileserver.link7.ro/hot/{z}/{x}/{y}.png", {
+          attribution: '&copy; Contribuitori <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+          maxZoom: 20
+        });
+        tileLayer.addTo(map);
+      })
     }
   });
-
-  var map = L.map("map", { maxZoom: 20, trackResize: false }).setView([47.6623, 23.6970], 15);
-  var tileLayer = L.tileLayer("//tileserver.link7.ro/hot/{z}/{x}/{y}.png", {
-    attribution: '&copy; Contribuitori <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    maxZoom: 20
-  });
-  tileLayer.addTo(map);
 })
