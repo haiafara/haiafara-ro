@@ -1,4 +1,4 @@
-# turistic
+# haiafara.ro
 
 [![Build Status](https://travis-ci.org/haiafara/haiafara-ro.svg?branch=master)](https://travis-ci.org/haiafara/haiafara-ro)
 
