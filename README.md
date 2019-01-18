@@ -20,3 +20,6 @@
     sudo su - postgres
     psql
     ALTER USER <user> WITH SUPERUSER;
+
+    \c haiafara_production
+    CREATE EXTENSION postgis;
