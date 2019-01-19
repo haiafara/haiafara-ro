@@ -23,3 +23,7 @@
 
     \c haiafara_production
     CREATE EXTENSION postgis;
+
+## Run in production mode locally
+
+    yarn install; RAILS_ENV=production rails assets:precompile; RAILS_ENV=production rails s
