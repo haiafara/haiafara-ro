@@ -16,7 +16,7 @@
     mounted() {
       this.$nextTick(function () {
         this.map = L.map('map', { maxZoom: 20, trackResize: true }).setView([47.6623, 23.6970], 15)
-        var tileLayer = L.tileLayer("//tileserver.link7.ro/hot/{z}/{x}/{y}.png", {
+        var tileLayer = L.tileLayer("//tileserver.haiafara.ro/hot/{z}/{x}/{y}.png", {
           attribution: '&copy; Contribuitori <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
           maxZoom: 20
         });
