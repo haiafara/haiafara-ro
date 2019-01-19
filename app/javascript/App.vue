@@ -32,13 +32,14 @@
 </template>
 
 <script>
+  import { eventBus } from 'packs/haiafara'
   import Map from './Map.vue'
 
   export default {
     components: {
       'haiafara-map': Map
     },
-    data: function() {
+    data() {
       return {
         drawer: false
       }
@@ -47,14 +48,14 @@
       toggleNavigationDrawer: function (event) {
         this.drawer = !this.drawer;
         setTimeout(function() {
-          // map.invalidateSize(true)
+          eventBus.$emit('invalidateMapSize')
         }, 200);
       },
       focusTown: function (event) {
-        // map.setView([47.6623, 23.6970], 15);
+        eventBus.$emit('setMapView', [47.6623, 23.6970], 15)
       },
       focusChurch: function (event) {
-        // map.setView([47.66283, 23.69984], 18);
+        eventBus.$emit('setMapView', [47.66283, 23.69984], 18)
       }
     },
   }

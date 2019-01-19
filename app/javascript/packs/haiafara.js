@@ -13,6 +13,8 @@ Vue.use(Vuetify)
 
 import App from '../App.vue'
 
+export const eventBus = new Vue()
+
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.body.appendChild(document.createElement('haiafara'))
   const app = new Vue({
