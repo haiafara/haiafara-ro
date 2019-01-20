@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class RegionTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test 'valid region' do
+    region = Region.new
+    assert region.valid?
+  end
 end
