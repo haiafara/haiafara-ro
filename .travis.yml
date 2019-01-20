@@ -6,7 +6,8 @@ addons:
     - postgresql-9.6-postgis-2.3
 cache:
   bundler: true
-  yarn: true
+  directories:
+    - ~/.cache
 install:
 - bundle install
 - nvm install node
