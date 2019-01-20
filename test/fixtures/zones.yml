@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  region: one
+  name: MyString
+  slug: MyString
+  default: false
+
+two:
+  region: two
+  name: MyString
+  slug: MyString
+  default: false
