@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+region = Region.create(name: 'Maramures')
+zone = Zone.create(name: 'Baia Sprie', region: region, default: true)
