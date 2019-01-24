@@ -45,9 +45,9 @@
 </script>
 
 <style>
+  /* TODO - separate this for mobile */
   #map-container {
     transition: padding 0.2s;
-    background: grey;
   }
 
   #map-container.collapsed {
