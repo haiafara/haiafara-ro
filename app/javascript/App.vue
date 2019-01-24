@@ -26,18 +26,18 @@
       <v-toolbar-side-icon @click.stop="toggleNavigationDrawer"></v-toolbar-side-icon>
     </v-toolbar>
     <v-content>
-      <haiafara-map></haiafara-map>
+      <haiafara-zone></haiafara-zone>
     </v-content>
   </v-app>
 </template>
 
 <script>
   import { eventBus } from 'packs/haiafara'
-  import Map from './Map.vue'
+  import Zone from './Zone.vue'
 
   export default {
     components: {
-      'haiafara-map': Map
+      'haiafara-zone': Zone
     },
     data() {
       return {
@@ -47,9 +47,9 @@
     methods: {
       toggleNavigationDrawer: function (event) {
         this.drawer = !this.drawer;
-        setTimeout(function() {
+        setTimeout(() => {
           eventBus.$emit('invalidateMapSize')
-        }, 200);
+        }, 200)
       },
       focusTown: function (event) {
         eventBus.$emit('setMapView', [47.6623, 23.6970], 15)
