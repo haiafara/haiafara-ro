@@ -43,7 +43,9 @@
     },
     computed: {
       appTitle() {
-        return this.on_screen ? 'Hartă Turistică ' + this.on_screen.name : 'haiafara.ro'
+        let title = this.on_screen ? 'Hartă Turistică ' + this.on_screen.name : window.title
+        document.title = title
+        return title
       }
     },
     methods: {

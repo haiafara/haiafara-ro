@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :zones, only: [:show]
   end
+  resources :zones, only: [:show], path: 'unde'
   get 'pages/home'
   root 'pages#home'
 end
