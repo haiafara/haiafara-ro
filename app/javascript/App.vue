@@ -26,19 +26,15 @@
       <v-toolbar-side-icon @click.stop="toggleNavigationDrawer"></v-toolbar-side-icon>
     </v-toolbar>
     <v-content>
-      <haiafara-zone></haiafara-zone>
+      <router-view></router-view>
     </v-content>
   </v-app>
 </template>
 
 <script>
   import { eventBus } from 'packs/haiafara'
-  import Zone from './Zone.vue'
 
   export default {
-    components: {
-      'haiafara-zone': Zone
-    },
     data() {
       return {
         drawer: false

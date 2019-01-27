@@ -12,13 +12,29 @@ import 'vuetify/dist/vuetify.min.css'
 Vue.use(Vuetify)
 
 import App from '../App.vue'
+import Zone from '../Zone.vue'
+
+// start event
 
 export const eventBus = new Vue()
 
+// router
+
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+
+const routes = [
+  { path: '/unde/:zone', component: Zone }
+]
+
+const router = new VueRouter({
+  routes
+})
+
 document.addEventListener('DOMContentLoaded', () => {
-  const el = document.body.appendChild(document.createElement('haiafara'))
   const app = new Vue({
-    el,
+    el: '#app',
+    router,
     render: h => h(App),
   })
 })
