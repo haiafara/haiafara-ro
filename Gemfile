@@ -44,6 +44,7 @@ gem 'rack', '>= 2.0.6'
 
 # my gem
 gem 'friendly_id', '~> 5.2.0'
+gem 'fast_jsonapi'
 gem 'administrate'
 
 group :development, :test do
