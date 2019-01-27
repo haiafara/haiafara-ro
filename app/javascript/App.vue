@@ -21,7 +21,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-toolbar color="light-blue" dense dark app>
-      <v-toolbar-title>Hartă Turistică Baia Sprie</v-toolbar-title>
+      <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-side-icon @click.stop="toggleNavigationDrawer"></v-toolbar-side-icon>
     </v-toolbar>
@@ -37,22 +37,33 @@
   export default {
     data() {
       return {
-        drawer: false
+        drawer: false,
+        on_screen: null
+      }
+    },
+    computed: {
+      appTitle() {
+        return this.on_screen ? 'Hartă Turistică ' + this.on_screen.name : 'haiafara.ro'
       }
     },
     methods: {
       toggleNavigationDrawer: function (event) {
         this.drawer = !this.drawer;
         setTimeout(() => {
-          eventBus.$emit('invalidateMapSize')
+          eventBus.$emit('mapInvalidateSize')
         }, 200)
       },
       focusTown: function (event) {
-        eventBus.$emit('setMapView', [47.6623, 23.6970], 15)
+        eventBus.$emit('mapSetView', [47.6623, 23.6970], 15)
       },
       focusChurch: function (event) {
-        eventBus.$emit('setMapView', [47.66283, 23.69984], 18)
+        eventBus.$emit('mapSetView', [47.66283, 23.69984], 18)
       }
     },
+    created() {
+      eventBus.$on('appUpdateOnScreen', (on_screen) => {
+        this.on_screen = on_screen
+      })
+    }
   }
 </script>

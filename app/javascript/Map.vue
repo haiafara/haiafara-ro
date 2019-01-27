@@ -10,7 +10,7 @@
   export default {
     data() {
       return {
-        map: true
+        map: null
       }
     },
     mounted() {
@@ -37,7 +37,7 @@
             return container;
           }
         });
-        this.map = L.map('map', { maxZoom: 20, trackResize: true }).setView([47.6623, 23.6970], 15)
+        this.map = L.map('map', { maxZoom: 20, trackResize: true })
         var tileLayer = L.tileLayer("//tileserver.haiafara.ro/hot/{z}/{x}/{y}.png", {
           attribution: '&copy; Contribuitori <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
           maxZoom: 20
@@ -47,11 +47,14 @@
       })
     },
     created() {
-      eventBus.$on('invalidateMapSize', () => {
+      eventBus.$on('mapInvalidateSize', () => {
         this.map.invalidateSize(true)
       })
-      eventBus.$on('setMapView', (coordinates, zoom) => {
+      eventBus.$on('mapSetView', (coordinates, zoom) => {
         this.map.setView(coordinates, zoom)
+      })
+      eventBus.$on('mapFitBounds', (bounds) => {
+        this.map.fitBounds(bounds)
       })
     }
   }
