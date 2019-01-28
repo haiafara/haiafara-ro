@@ -3,6 +3,9 @@ FactoryBot.define do
     sequence :name do |n|
       "Test Zone #{n}"
     end
+    sequence :description do |n|
+      "Test Zone Description #{n}"
+    end
     region
     bounding_box do
       '0103000020E610000001000000050000002506819543AB3740' +

@@ -11,6 +11,7 @@ region = Region.create(name: 'Maramures')
 
 zone = Zone.create(
   name: 'Baia Sprie',
+  description: 'Baia Sprie este un orașel de munte din județul Maramureș, situat la doar 10 kilometri de Baia Mare.',
   bounding_box: RGeo::Cartesian::BoundingBox.create_from_points(
     f.point(23.669, 47.65),
     f.point(23.725, 47.674)

@@ -19,12 +19,16 @@ RSpec.describe ZoneSerializer do
     describe 'attributes' do
       let(:attributes) { data['attributes'] }
 
-      it 'has exactly 2 attributes' do
-        expect(attributes.size).to eq(2)
+      it 'has exactly 3 attributes' do
+        expect(attributes.size).to eq(3)
       end
 
       it 'has the correct name attribute' do
         expect(attributes['name']).to eq(zone.name)
+      end
+
+      it 'has the correct description attribute' do
+        expect(attributes['description']).to eq(zone.description)
       end
 
       it 'has the correct bounds attribute' do
