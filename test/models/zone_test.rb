@@ -11,4 +11,8 @@ class ZoneTest < ActiveSupport::TestCase
     zone = Zone.new(name: 'Zone')
     refute zone.valid?
   end
+
+  test 'geometry field behaves as geometry' do
+    assert_equal zones(:two)['bounding_box'].to_s, 'POLYGON ((23.669 47.65, 23.725 47.65, 23.725 47.674, 23.669 47.674, 23.669 47.65))'
+  end
 end
