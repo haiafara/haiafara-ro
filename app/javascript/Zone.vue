@@ -1,10 +1,10 @@
 <template>
   <v-container ma-0 pa-0 fluid fill-height class="b">
     <v-layout row wrap>
-      <v-flex grow :class="{'map-minheight': $vuetify.breakpoint.mdAndDown, 'collapsed': showInfoPanel }" id="map-container">
+      <v-flex grow :class="{'map-minheight': $vuetify.breakpoint.smAndDown, 'collapsed': showInfoPanel && $vuetify.breakpoint.mdAndUp }" id="map-container">
         <haiafara-map></haiafara-map>
       </v-flex>
-      <aside :class="{'collapsed': !showInfoPanel}" id="info-panel">
+      <aside :class="{'collapsed': !showInfoPanel, 'sliding-panel': $vuetify.breakpoint.mdAndUp}" id="info-panel">
         <h1>Lorem ipsum dolor sit amet</h1>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque nostrum explicabo dolorum expedita commodi id, porro voluptatem, est delectus corporis obcaecati laborum sit unde suscipit modi incidunt consequatur sunt neque. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque nostrum explicabo dolorum expedita commodi id, porro voluptatem, est delectus corporis obcaecati laborum sit unde suscipit modi incidunt consequatur sunt neque.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis maiores culpa nam a, libero tempore laborum nostrum cupiditate necessitatibus mollitia animi debitis dolores est tempora fugit doloremque, quisquam nemo alias! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis modi minima quos! Reprehenderit inventore beatae totam corrupti illo, id aliquid commodi illum quibusdam accusantium modi culpa in impedit tempora pariatur!<p>
@@ -62,7 +62,11 @@
     padding-right: 400px;
   }
 
-  #info-panel {
+  #map-container.map-minheight {
+    min-height: 400px;
+  }
+
+  #info-panel.sliding-panel {
     padding: 15px;
     background: #fff;
     right: 0;
@@ -76,7 +80,7 @@
     transform: translateX(0px);
   }
 
-  #info-panel.collapsed {
+  #info-panel.sliding-panel.collapsed {
     transform: translateX(400px);
   }
 </style>
