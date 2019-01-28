@@ -1,10 +1,10 @@
 <template>
   <v-container ma-0 pa-0 fluid fill-height class="b">
     <v-layout row wrap>
-      <v-flex grow :class="{'map-minheight': $vuetify.breakpoint.smAndDown, 'collapsed': showInfoPanel && $vuetify.breakpoint.mdAndUp }" id="map-container">
+      <v-flex :class="{'map-minheight': $vuetify.breakpoint.xsAndDown, 'collapsed': showInfoPanel && $vuetify.breakpoint.smAndUp }" id="map-container">
         <haiafara-map></haiafara-map>
       </v-flex>
-      <aside :class="{'collapsed': !showInfoPanel, 'sliding-panel': $vuetify.breakpoint.mdAndUp}" id="info-panel">
+      <aside :class="{'collapsed': !showInfoPanel, 'sliding-panel': $vuetify.breakpoint.smAndUp}" id="info-panel">
         <h1>{{ infoPanelTitle }}</h1>
         {{ infoPanelDescription }}
       </aside>
@@ -56,6 +56,7 @@
 <style>
   /* TODO - separate this for mobile */
   #map-container {
+    width: 100%;
     transition: padding 0.2s;
   }
 
