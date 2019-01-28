@@ -32,13 +32,21 @@
       toggleInfoPanel() {
         this.showInfoPanel = !this.showInfoPanel
         setTimeout(() => {
-          eventBus.$emit('invalidateMapSize')
+          eventBus.$emit('mapInvalidateSize')
         }, 200)
       }
     },
     created() {
       eventBus.$on('toggleInfoPanel', () => {
         this.toggleInfoPanel()
+      })
+      fetch('/api/zones/' + this.$route.params.zone, {
+        method: 'get'
+      }).then((response) => {
+        return response.json()
+      }).then((json) => {
+        eventBus.$emit('appUpdateOnScreen', { type: json.data.type, name: json.data.attributes.name })
+        eventBus.$emit('mapFitBounds', json.data.attributes.bounds)
       })
     }
   }
