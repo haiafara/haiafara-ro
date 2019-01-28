@@ -2,12 +2,18 @@
 
 one:
   region: one
-  name: MyString
-  slug: MyString
+  name: Zone One
+  slug: zone-one
   default: false
 
 two:
   region: two
-  name: MyString
-  slug: MyString
+  name: Zone Two
+  slug: zone-two
+  default: true
+
+three:
+  region: three
+  name: Zone Three
+  slug: zone-three
   default: false
