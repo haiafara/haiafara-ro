@@ -1,13 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ZoneSerializer do
-  let(:zone) do
-    Zone.new(
-      name: 'Test Zone',
-      slug: 'test-zone',
-      bounding_box: '0103000020E610000001000000050000002506819543AB37403333333333D347409A99999999B937403333333333D347409A99999999B9374083C0CAA145D647402506819543AB374083C0CAA145D647402506819543AB37403333333333D34740'
-    )
-  end
+  let(:zone) { build(:zone) }
 
   subject { JSON.parse(described_class.new(zone).serialized_json) }
 
@@ -25,7 +19,7 @@ RSpec.describe ZoneSerializer do
     describe 'attributes' do
       let(:attributes) { data['attributes'] }
 
-      it 'has 2 attributes' do
+      it 'has exactly 2 attributes' do
         expect(attributes.size).to eq(2)
       end
 
