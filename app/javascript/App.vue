@@ -21,42 +21,51 @@
       </v-list>
     </v-navigation-drawer>
     <v-toolbar color="light-blue" dense dark app>
-      <v-toolbar-title>Hartă Turistică Baia Sprie</v-toolbar-title>
+      <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-side-icon @click.stop="toggleNavigationDrawer"></v-toolbar-side-icon>
     </v-toolbar>
     <v-content>
-      <haiafara-map></haiafara-map>
+      <router-view></router-view>
     </v-content>
   </v-app>
 </template>
 
 <script>
   import { eventBus } from 'packs/haiafara'
-  import Map from './Map.vue'
 
   export default {
-    components: {
-      'haiafara-map': Map
-    },
     data() {
       return {
-        drawer: false
+        drawer: false,
+        on_screen: null
+      }
+    },
+    computed: {
+      appTitle() {
+        let title = this.on_screen ? 'Hartă Turistică ' + this.on_screen.name : window.title
+        document.title = title
+        return title
       }
     },
     methods: {
       toggleNavigationDrawer: function (event) {
         this.drawer = !this.drawer;
-        setTimeout(function() {
-          eventBus.$emit('invalidateMapSize')
-        }, 200);
+        setTimeout(() => {
+          eventBus.$emit('mapInvalidateSize')
+        }, 200)
       },
       focusTown: function (event) {
-        eventBus.$emit('setMapView', [47.6623, 23.6970], 15)
+        eventBus.$emit('mapSetView', [47.6623, 23.6970], 15)
       },
       focusChurch: function (event) {
-        eventBus.$emit('setMapView', [47.66283, 23.69984], 18)
+        eventBus.$emit('mapSetView', [47.66283, 23.69984], 18)
       }
     },
+    created() {
+      eventBus.$on('appUpdateOnScreen', (on_screen) => {
+        this.on_screen = on_screen
+      })
+    }
   }
 </script>
