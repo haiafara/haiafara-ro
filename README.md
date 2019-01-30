@@ -1,7 +1,8 @@
 # haiafara.ro
 
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/haiafara/haiafara-ro.svg?columns=all)](http://waffle.io/haiafara/haiafara-ro)
 [![Build Status](https://travis-ci.org/haiafara/haiafara-ro.svg?branch=master)](https://travis-ci.org/haiafara/haiafara-ro)
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/haiafara/haiafara-ro.svg?columns=all)](http://waffle.io/haiafara/haiafara-ro)
+[![Gitter chat](https://badges.gitter.im/haiafara/community.png)](https://gitter.im/haiafara/community)
 
 ## Install or update Node.js
 
