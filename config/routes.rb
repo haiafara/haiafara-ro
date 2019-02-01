@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :regions
     resources :zones
+    resources :pois
     root to: "regions#index"
   end
   namespace :api, defaults: { format: :json } do
