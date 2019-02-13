@@ -42,7 +42,10 @@ gem 'mina'
 gem 'loofah', '>= 2.2.3'
 gem 'rack', '>= 2.0.6'
 
-# my gem
+# monitoring, etc
+gem 'skylight'
+
+# my gems
 gem 'friendly_id', '~> 5.2.0'
 gem 'fast_jsonapi'
 gem 'administrate'
