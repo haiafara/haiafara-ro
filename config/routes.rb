@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :zones, only: [:show]
   end
   resources :zones, only: [:show], path: 'unde'
+  resources :pois, only: [:show], path: 'poi'
   get 'pages/home'
   root 'pages#home'
 end

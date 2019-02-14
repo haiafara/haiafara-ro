@@ -62,6 +62,7 @@ task :deploy do
       in_path(fetch(:current_path)) do
         command %{mkdir -p tmp/}
         command %{touch tmp/restart.txt}
+        invoke :'sitemap:refresh'
       end
     end
   end

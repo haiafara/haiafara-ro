@@ -48,6 +48,7 @@ gem 'friendly_id', '~> 5.2.0'
 gem 'fast_jsonapi'
 gem 'administrate'
 gem 'rgeo-geojson'
+gem 'sitemap_generator'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
