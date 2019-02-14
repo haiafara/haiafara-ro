@@ -35,7 +35,11 @@ namespace :synchronize do
         )
       }
     end
-    puts pois.inspect
+    pois.each do |poi|
+      hash = RGeo::GeoJSON.encode(poi[:shape])
+      puts hash.to_json
+      puts '===================='
+    end
   end
 end
 

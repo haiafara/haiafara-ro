@@ -321,6 +321,7 @@ DEPENDENCIES
   puma (~> 3.11)
   rack (>= 2.0.6)
   rails (~> 5.2.1)
+  rgeo-geojson
   rspec-rails (~> 3.8)
   sass-rails (~> 5.0)
   selenium-webdriver
