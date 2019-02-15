@@ -7,3 +7,5 @@
 [![Gitter chat](https://badges.gitter.im/haiafara/community.png)](https://gitter.im/haiafara/community)
 
 ![haiafara.ro screenshot](support/haiafara-screenshot.png)
+
+"Hai afară!" ("Come outside!" in Romanian) is a Ruby on Rails application used to showcase hiking, biking and running trails as well as other types of touristical attractions in a given zone of interest.
