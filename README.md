@@ -5,7 +5,12 @@
 [![View performance data on Skylight](https://badges.skylight.io/status/P2iwuIZhzoOK.svg)](https://oss.skylight.io/app/applications/P2iwuIZhzoOK)
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/haiafara/haiafara-ro.svg?columns=Inbox,In%20Progress)](http://waffle.io/haiafara/haiafara-ro)
 [![Gitter chat](https://badges.gitter.im/haiafara/community.png)](https://gitter.im/haiafara/community)
+[![Licensed under the Apache License, Version 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 ![haiafara.ro screenshot](support/haiafara-screenshot.png)
 
 "Hai afară!" ("Come outside!" in Romanian) is a Ruby on Rails application used to showcase hiking, biking and running trails as well as other types of touristical attractions in a given zone of interest.
+
+## License
+
+This project is licensed under the the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
