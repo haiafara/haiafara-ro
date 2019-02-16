@@ -1,30 +1,16 @@
 # haiafara.ro
 
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/haiafara/haiafara-ro.svg?columns=all)](http://waffle.io/haiafara/haiafara-ro)
 [![Build Status](https://travis-ci.org/haiafara/haiafara-ro.svg?branch=master)](https://travis-ci.org/haiafara/haiafara-ro)
+[![Coverage Status](https://coveralls.io/repos/github/haiafara/haiafara-ro/badge.svg?branch=master)](https://coveralls.io/github/haiafara/haiafara-ro?branch=master)
+[![View performance data on Skylight](https://badges.skylight.io/status/P2iwuIZhzoOK.svg)](https://oss.skylight.io/app/applications/P2iwuIZhzoOK)
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/haiafara/haiafara-ro.svg?columns=Inbox,In%20Progress)](http://waffle.io/haiafara/haiafara-ro)
+[![Gitter chat](https://badges.gitter.im/haiafara/community.png)](https://gitter.im/haiafara/community)
+[![Licensed under the Apache License, Version 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
-## Install or update Node.js
+![haiafara.ro screenshot](support/haiafara-screenshot.png)
 
-    curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-    sudo apt install nodejs
+"Hai afară!" ("Come outside!" in Romanian) is a Ruby on Rails application used to showcase hiking, biking and running trails as well as other types of touristical attractions in a given zone of interest.
 
-## Install yarn
+## License
 
-    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-    sudo apt update && sudo apt install yarn
-
-## Set up PostgreSQL and PostGIS
-
-    sudo apt install libpq-dev postgis
-    sudo -u postgres createuser <user>
-    sudo su - postgres
-    psql
-    ALTER USER <user> WITH SUPERUSER;
-
-    \c haiafara_production
-    CREATE EXTENSION postgis;
-
-## Run in production mode locally
-
-    RAILS_ENV=production rails assets:precompile; RAILS_ENV=production rails s
+This project is licensed under the the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
