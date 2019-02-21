@@ -1,5 +1,7 @@
-require 'coveralls'
-Coveralls.wear!
+if ENV['CI'] == 'true'
+  require 'coveralls'
+  Coveralls.wear!
+end
 
 require 'simplecov'
 SimpleCov.start 'rails' do
