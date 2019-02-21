@@ -8,6 +8,7 @@ class POIDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    zones: Field::HasMany,
     id: Field::Number,
     name: Field::String,
     description: Field::Text,
@@ -26,13 +27,13 @@ class POIDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :name,
-    :description,
-    :slug,
+    :description
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
+    :zones,
     :id,
     :name,
     :description,
@@ -47,9 +48,11 @@ class POIDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
+    :zones,
     :name,
     :description,
     :slug,
+    :shape,
     :overpass_query,
   ].freeze
 
