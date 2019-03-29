@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+# Zones are windows to the world on haiafara.
+# You start exploring from a zone.
 class Zone < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
