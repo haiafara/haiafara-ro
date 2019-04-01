@@ -49,6 +49,7 @@ gem 'fast_jsonapi'
 gem 'administrate'
 gem 'rgeo-geojson'
 gem 'sitemap_generator'
+gem 'sidekiq'
 
 gem 'underpass'
 
