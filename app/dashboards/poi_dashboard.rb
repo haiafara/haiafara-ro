@@ -26,8 +26,7 @@ class POIDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :name,
-    :description
+    :name
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -38,10 +37,10 @@ class POIDashboard < Administrate::BaseDashboard
     :name,
     :description,
     :slug,
+    :overpass_query,
     :shape,
     :created_at,
-    :updated_at,
-    :overpass_query,
+    :updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -51,9 +50,7 @@ class POIDashboard < Administrate::BaseDashboard
     :zones,
     :name,
     :description,
-    :slug,
-    :shape,
-    :overpass_query,
+    :overpass_query
   ].freeze
 
   # Overwrite this method to customize how pois are displayed
