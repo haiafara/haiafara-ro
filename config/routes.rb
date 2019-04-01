@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   resources :pois, only: [:show], path: 'poi'
   get 'pages/home'
   root 'pages#home'
+
+  # sidekiq
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 end
