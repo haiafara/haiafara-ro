@@ -13,8 +13,8 @@ RSpec.describe POI, type: :model do
   end
 
   describe '#enqueue_update_shape' do
-    it 'calls GetPOIShapeJob' do
-      expect(GetPOIShapeJob).to receive(:perform_later)
+    it 'calls POIUpdateShapeJob' do
+      expect(POIUpdateShapeJob).to receive(:perform_later)
       subject.send(:enqueue_update_shape)
     end
   end
