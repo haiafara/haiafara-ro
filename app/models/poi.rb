@@ -4,11 +4,11 @@ class POI < ApplicationRecord
 
   has_and_belongs_to_many :zones
 
-  after_save :update_shape
+  after_save :enqueue_update_shape
 
   private
 
-  def update_shape
+  def enqueue_update_shape
     GetPOIShapeJob.perform_later(self.id)
   end
 end
