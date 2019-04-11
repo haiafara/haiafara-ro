@@ -12,9 +12,9 @@ module POIService
           poi.update_column(:shape, matches.first)
           break
         when 0
-          # send not found email
+          POIMailer.no_match_notice(poi).deliver_now
         else
-          # send more than one found email
+          POIMailer.many_matches_notice(poi).deliver_now
         end
       end
     end

@@ -10,14 +10,17 @@ RSpec.describe POIService do
       before do
         allow(Underpass::QL::Query).to receive(:perform).and_return([point])
       end
+
       it 'updates the shape column' do
         POIService.update_shape_from_overpass(poi.id)
         expect(poi.reload.shape).to eq(point)
       end
     end
+
     context 'when there are no matches' do
       pending 'no matches'
     end
+
     context 'when there is more than one match' do
       pending 'more than one match'
     end
