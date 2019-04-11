@@ -7,12 +7,16 @@ module POIService
           z.expanded_bounding_box,
           poi.overpass_query
         )
-        if matches.size
+        case matches.size
+        when 1
           poi.update_column(:shape, matches.first)
           break
+        when 0
+          # send not found email
+        else
+          # send more than one found email
         end
       end
-      # if not found, send email
     end
   end
 end
