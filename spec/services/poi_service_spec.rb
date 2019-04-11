@@ -18,11 +18,27 @@ RSpec.describe POIService do
     end
 
     context 'when there are no matches' do
-      pending 'no matches'
+      before do
+        allow(Underpass::QL::Query).to receive(:perform).and_return([])
+      end
+
+      it 'sends an email' do
+        deliveries = ActionMailer::Base.deliveries
+        expect { POIService.update_shape_from_overpass(poi.id) }.to change{deliveries.count}.by(1)
+        expect(deliveries.last.subject).to eq(I18n.t('poi_mailer.no_match_notice.subject', poi_name: poi.name))
+      end
     end
 
     context 'when there is more than one match' do
-      pending 'more than one match'
+      before do
+        allow(Underpass::QL::Query).to receive(:perform).and_return([point, point])
+      end
+
+      it 'sends an email' do
+        deliveries = ActionMailer::Base.deliveries
+        expect { POIService.update_shape_from_overpass(poi.id) }.to change{deliveries.count}.by(1)
+        expect(deliveries.last.subject).to eq(I18n.t('poi_mailer.many_matches_notice.subject', poi_name: poi.name))
+      end
     end
   end
 end
