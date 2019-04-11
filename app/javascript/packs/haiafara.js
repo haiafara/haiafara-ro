@@ -10,9 +10,12 @@ Vue.use(Vuetify)
 
 export const eventBus = new Vue()
 
+// import modules
+
 import App from '../App.vue'
 import Home from '../Home.vue'
 import Zone from '../Zone.vue'
+import POI from '../POI.vue'
 
 // router
 
@@ -21,7 +24,8 @@ Vue.use(VueRouter)
 
 const routes = [
   { path: '/', component: Home },
-  { path: '/unde/:zone', component: Zone }
+  { path: '/unde/:zone', component: Zone },
+  { path: '/pdi/:poi', component: POI }
 ]
 
 const router = new VueRouter({
