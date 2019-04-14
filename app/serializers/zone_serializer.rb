@@ -7,4 +7,7 @@ class ZoneSerializer
     # now, why wouldn't it be reversed
     [[bb.min_y, bb.min_x], [bb.max_y, bb.max_x]]
   end
+  has_many :pois, id_method_name: :slug do |object|
+    object.pois.recommended
+  end
 end

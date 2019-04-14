@@ -24,7 +24,8 @@
       return {
         showInfoPanel: false,
         infoPanelTitle: '',
-        infoPanelDescription: ''
+        infoPanelDescription: '',
+        infoPanelPOIs: []
       }
     },
     methods: {
@@ -48,6 +49,11 @@
         eventBus.$emit('mapFitBounds', json.data.attributes.bounds)
         this.infoPanelTitle = json.data.attributes.name
         this.infoPanelDescription = json.data.attributes.description
+        /* TODO - the following should be intersected with json.data.relationships.pois */
+        this.infoPanelPOIs = json.included
+        this.infoPanelPOIs.forEach(poi => {
+          eventBus.$emit('mapAddGeoJSON', poi.attributes.shape)
+        })
       })
     }
   }

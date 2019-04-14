@@ -56,6 +56,25 @@
       eventBus.$on('mapFitBounds', (bounds) => {
         this.map.fitBounds(bounds)
       })
+      eventBus.$on('mapAddGeoJSON', (geoJSON) => {
+        L.geoJSON(geoJSON, {
+          pointToLayer: function(feature, latlng) {
+            return L.marker(
+              latlng,
+              {
+                icon: new L.Icon(
+                  {
+                    iconSize: [25, 41],
+                    iconAnchor: [13, 41],
+                    popupAnchor: [1, -24],
+                    iconUrl: '/marker-icon-blue.png'
+                  }
+                )
+              }
+            )
+          }
+        }).addTo(this.map)
+      })
     }
   }
 </script>
