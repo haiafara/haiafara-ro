@@ -17,6 +17,7 @@ class POIDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     overpass_query: Field::Text,
+    recommended: Field::Boolean,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -39,6 +40,7 @@ class POIDashboard < Administrate::BaseDashboard
     :slug,
     :overpass_query,
     :shape,
+    :recommended,
     :created_at,
     :updated_at
   ].freeze
@@ -50,7 +52,8 @@ class POIDashboard < Administrate::BaseDashboard
     :zones,
     :name,
     :description,
-    :overpass_query
+    :overpass_query,
+    :recommended
   ].freeze
 
   # Overwrite this method to customize how pois are displayed
