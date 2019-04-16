@@ -8,8 +8,8 @@ RSpec.describe POIMailer, type: :mailer do
 
     it "renders the headers" do
       expect(mail.subject).to eq("[admin] #{poi.name} - Nu există potriviri")
-      expect(mail.to).to eq(['haiafara.ro@gmail.com'])
-      expect(mail.from).to eq(['from@example.com'])
+      expect(mail.to).to eq([Rails.application.credentials.mailer[:admin_email]])
+      expect(mail.from).to eq([Rails.application.credentials.mailer[:default_from]])
     end
 
     it "renders the body" do
@@ -23,8 +23,8 @@ RSpec.describe POIMailer, type: :mailer do
 
     it "renders the headers" do
       expect(mail.subject).to eq("[admin] #{poi.name} - Există mai mult de o potrivire")
-      expect(mail.to).to eq(['haiafara.ro@gmail.com'])
-      expect(mail.from).to eq(['from@example.com'])
+      expect(mail.to).to eq([Rails.application.credentials.mailer[:admin_email]])
+      expect(mail.from).to eq([Rails.application.credentials.mailer[:default_from]])
     end
 
     it "renders the body" do
