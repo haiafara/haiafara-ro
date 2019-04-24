@@ -1,5 +1,15 @@
+if ENV['CI'] == 'true'
+  require 'coveralls'
+  Coveralls.wear!
+end
+
 require 'simplecov'
-SimpleCov.start 'rails'
+SimpleCov.start 'rails' do
+  add_filter 'app/controllers/admin/'
+  add_filter 'app/dashboards/'
+  add_group 'Serializers', 'app/serializers'
+  add_group 'Services', 'app/services'
+end
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'

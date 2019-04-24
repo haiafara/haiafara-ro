@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -22,8 +24,6 @@ gem 'webpacker', '>= 4.0.x'
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -50,6 +50,11 @@ gem 'sentry-raven'
 gem 'friendly_id', '~> 5.2.0'
 gem 'fast_jsonapi'
 gem 'administrate'
+gem 'rgeo-geojson'
+gem 'sitemap_generator'
+gem 'sidekiq'
+
+gem 'underpass'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -57,6 +62,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8'
   gem 'database_cleaner'
   gem 'factory_bot_rails', '~> 5.0'
+  gem 'pry'
 end
 
 group :development do
@@ -75,8 +81,8 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
   gem 'simplecov', require: false
+  gem 'coveralls', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'activerecord-postgis-adapter'
