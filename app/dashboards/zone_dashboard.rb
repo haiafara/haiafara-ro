@@ -11,6 +11,7 @@ class ZoneDashboard < Administrate::BaseDashboard
     region: Field::BelongsTo,
     id: Field::Number,
     name: Field::String,
+    description: Field::Text,
     slug: Field::String,
     default: Field::Boolean,
     created_at: Field::DateTime,
@@ -35,6 +36,7 @@ class ZoneDashboard < Administrate::BaseDashboard
     :region,
     :id,
     :name,
+    :description,
     :slug,
     :default,
     :created_at,
@@ -47,6 +49,7 @@ class ZoneDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :region,
     :name,
+    :description,
     :slug,
     :default,
   ].freeze
