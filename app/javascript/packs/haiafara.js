@@ -23,9 +23,9 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/unde/:zone', component: Zone },
-  { path: '/pdi/:poi', component: POI }
+  { path: '/', name: 'home', component: Home },
+  { path: '/unde/:id', name: 'zone', component: Zone },
+  { path: '/pdi/:id', name: 'poi', component: POI }
 ]
 
 const router = new VueRouter({

@@ -10,7 +10,8 @@
   export default {
     data() {
       return {
-        map: null
+        map: null,
+        geoJSONLayer: null
       }
     },
     created() {
@@ -23,24 +24,11 @@
       eventBus.$on('mapFitBounds', (bounds) => {
         this.map.fitBounds(bounds)
       })
-      eventBus.$on('mapAddGeoJSON', (geoJSON) => {
-        L.geoJSON(geoJSON, {
-          pointToLayer: function(feature, latlng) {
-            return L.marker(
-              latlng,
-              {
-                icon: new L.Icon(
-                  {
-                    iconSize: [25, 41],
-                    iconAnchor: [13, 41],
-                    popupAnchor: [1, -24],
-                    iconUrl: '/marker-icon-blue.png'
-                  }
-                )
-              }
-            )
-          }
-        }).addTo(this.map)
+      eventBus.$on('mapAddGeoJSON', (type, id, name, shape) => {
+        this.geoJSONLayer.addData({ type: 'Feature', id: id, properties: { type: type, name: name }, geometry: shape })
+      })
+      eventBus.$on('mapClearGeoJSONLayer', () => {
+        this.geoJSONLayer.clearLayers()
       })
     },
     mounted() {
@@ -73,6 +61,35 @@
       });
       tileLayer.addTo(this.map)
       this.map.addControl(new customControl())
+
+      this.geoJSONLayer = L.geoJSON(
+        undefined,
+        {
+          onEachFeature: (feature, layer) => {
+            layer.on({
+              click: () => {
+                this.$router.push({ name: feature.properties.type, params: { id: feature.id }})
+              }
+            })
+            layer.bindTooltip(feature.properties.name)
+          },
+          pointToLayer: (feature, latlng) => {
+            return L.marker(
+              latlng,
+              {
+                icon: new L.Icon(
+                  {
+                    iconSize: [25, 41],
+                    iconAnchor: [13, 41],
+                    popupAnchor: [1, -24],
+                    iconUrl: '/marker-icon-blue.png'
+                  }
+                )
+              }
+            )
+          }
+        }
+      ).addTo(this.map)
     }
   }
 </script>

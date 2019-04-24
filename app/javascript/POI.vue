@@ -1,91 +1,55 @@
 <template>
-  <v-container ma-0 pa-0 fluid fill-height class="b">
-    <v-layout row wrap>
-      <v-flex :class="{'map-minheight': $vuetify.breakpoint.xsAndDown, 'collapsed': showInfoPanel && $vuetify.breakpoint.smAndUp }" id="map-container">
-        <haiafara-map></haiafara-map>
-      </v-flex>
-      <aside :class="{'collapsed': !showInfoPanel, 'sliding-panel': $vuetify.breakpoint.smAndUp}" id="info-panel">
-        <h1>{{ infoPanelTitle }}</h1>
-        {{ infoPanelDescription }}
-      </aside>
-    </v-layout>
-  </v-container>
+  <div>
+    <div class="text">
+      <h1>{{ title }}</h1>
+      {{ description }}
+    </div>
+  </div>
 </template>
 
 <script>
   import { eventBus } from 'packs/haiafara'
-  import Map from './Map.vue'
 
   export default {
-    components: {
-      'haiafara-map': Map
-    },
     data() {
       return {
-        showInfoPanel: false,
-        infoPanelTitle: '',
-        infoPanelDescription: ''
+        title: '',
+        description: ''
       }
     },
     methods: {
-      toggleInfoPanel() {
-        this.showInfoPanel = !this.showInfoPanel
-        setTimeout(() => {
-          eventBus.$emit('mapInvalidateSize')
-        }, 200)
+      updatePOI(json) {
+        this.$nextTick(function() {
+          eventBus.$emit('appUpdateOnScreen', { type: json.data.type, name: json.data.attributes.name })
+          eventBus.$emit('mapFitBounds', json.data.attributes.bounds)
+          this.title = json.data.attributes.name
+          this.description = json.data.attributes.description
+        })
       }
     },
     created() {
-      eventBus.$on('toggleInfoPanel', () => {
-        this.toggleInfoPanel()
-      })
-      fetch('/api/pois/' + this.$route.params.poi, {
-        method: 'get'
-      }).then((response) => {
-        return response.json()
-      }).then((json) => {
-        eventBus.$emit('appUpdateOnScreen', { type: json.data.type, name: json.data.attributes.name })
-        eventBus.$emit('mapFitBounds', json.data.attributes.bounds)
-        this.infoPanelTitle = json.data.attributes.name
-        this.infoPanelDescription = json.data.attributes.description
-      })
+      var rj = window.resource_json
+      if(
+        rj &&
+        rj.data.type == 'poi' &&
+        rj.data.id == this.$route.params.id
+      ) {
+        this.updatePOI(rj)
+      } else {
+        fetch('/api/pois/' + this.$route.params.id, {
+          method: 'get'
+        }).then((response) => {
+          return response.json()
+        }).then((json) => {
+          this.updatePOI(json)
+        })
+      }
+    },
+    mounted() {
+      eventBus.$emit('mapClearGeoJSONLayer')
     }
   }
 </script>
 
 <style>
-  /* TODO - separate this for mobile */
-  #map-container {
-    width: 100%;
-    transition: padding 0.2s;
-  }
-
-  #map-container.collapsed {
-    padding-right: 400px;
-  }
-
-  #map-container.map-minheight {
-    min-height: 400px;
-  }
-
-  #info-panel {
-    padding: 15px;
-  }
-
-  #info-panel.sliding-panel {
-    background: #fff;
-    right: 0;
-    left: auto;
-    position: absolute;
-    height: 100%;
-    overflow: auto;
-    border-left: 1px solid #ddd;
-    width: 400px;
-    transition: transform 0.2s;
-    transform: translateX(0px);
-  }
-
-  #info-panel.sliding-panel.collapsed {
-    transform: translateX(400px);
-  }
 </style>
