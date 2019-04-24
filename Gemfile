@@ -44,6 +44,7 @@ gem 'rack', '>= 2.0.6'
 
 # monitoring, etc
 gem 'skylight'
+gem 'sentry-raven'
 
 # my gems
 gem 'friendly_id', '~> 5.2.0'
