@@ -34,17 +34,8 @@
         setTimeout(() => {
           eventBus.$emit('mapInvalidateSize')
         }, 200)
-      }
-    },
-    created() {
-      eventBus.$on('toggleInfoPanel', () => {
-        this.toggleInfoPanel()
-      })
-      fetch('/api/zones/' + this.$route.params.zone, {
-        method: 'get'
-      }).then((response) => {
-        return response.json()
-      }).then((json) => {
+      },
+      updateZone(json) {
         eventBus.$emit('appUpdateOnScreen', { type: json.data.type, name: json.data.attributes.name })
         eventBus.$emit('mapFitBounds', json.data.attributes.bounds)
         this.infoPanelTitle = json.data.attributes.name
@@ -54,7 +45,30 @@
         this.infoPanelPOIs.forEach(poi => {
           eventBus.$emit('mapAddGeoJSON', poi.attributes.shape)
         })
+      }
+    },
+    created() {
+      eventBus.$on('toggleInfoPanel', () => {
+        this.toggleInfoPanel()
       })
+    },
+    mounted() {
+      var rj = window.resource_json
+      if(
+        rj &&
+        rj.data.type == 'zone' &&
+        rj.data.id == this.$route.params.zone
+      ) {
+        this.updateZone(rj)
+      } else {
+        fetch('/api/zones/' + this.$route.params.zone, {
+          method: 'get'
+        }).then((response) => {
+          return response.json()
+        }).then((json) => {
+          this.updateZone(json)
+        })
+      }
     }
   }
 </script>
