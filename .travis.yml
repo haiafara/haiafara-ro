@@ -10,7 +10,7 @@ cache:
     - ~/.cache
 install:
 - bundle install
-- nvm install node
+- nvm install --lts
 - npm i -g yarn
 - yarn
 script:
