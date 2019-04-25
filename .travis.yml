@@ -27,7 +27,7 @@ before_deploy:
 deploy:
   provider: script
   skip_cleanup: true
-  script: bundle exec cap production deploy
+  script: rvm use $(< .ruby-version) do bundle exec cap production deploy
   on:
     branch: master
 env:
