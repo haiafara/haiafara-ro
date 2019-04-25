@@ -36,8 +36,11 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem 'mina'
-gem 'mina-sidekiq'
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano-passenger'
+gem 'capistrano-rvm'
+gem 'capistrano-sidekiq'
 
 # recommended security updates
 gem 'loofah', '>= 2.2.3'
