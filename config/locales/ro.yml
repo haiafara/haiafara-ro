@@ -1,0 +1,6 @@
+ro:
+  poi_mailer:
+    no_match_notice:
+      subject: "[admin] %{poi_name} - Nu există potriviri"
+    many_matches_notice:
+      subject: "[admin] %{poi_name} - Există mai mult de o potrivire"

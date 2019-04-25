@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_28_230118) do
+ActiveRecord::Schema.define(version: 2019_04_14_181228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,24 @@ ActiveRecord::Schema.define(version: 2019_01_28_230118) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "pois", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "slug"
+    t.geography "shape", limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "overpass_query"
+    t.boolean "recommended", default: false
+  end
+
+  create_table "pois_zones", id: false, force: :cascade do |t|
+    t.bigint "poi_id", null: false
+    t.bigint "zone_id", null: false
+    t.index ["poi_id"], name: "index_pois_zones_on_poi_id"
+    t.index ["zone_id"], name: "index_pois_zones_on_zone_id"
   end
 
   create_table "regions", force: :cascade do |t|
