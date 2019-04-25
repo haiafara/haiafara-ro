@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'mina'
+gem 'mina-sidekiq'
 
 # recommended security updates
 gem 'loofah', '>= 2.2.3'
