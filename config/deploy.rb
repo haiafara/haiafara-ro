@@ -58,6 +58,7 @@ task :deploy do
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
     invoke :'rails:assets_precompile'
+    invoke :'sidekiq:restart'
     invoke :'deploy:cleanup'
 
     on :launch do
@@ -65,8 +66,6 @@ task :deploy do
         command %{mkdir -p tmp/}
         command %{touch tmp/restart.txt}
       end
-      # invoke :'rake[sitemap:refresh]'
-      # invoke :'sidekiq:restart'
     end
   end
 
