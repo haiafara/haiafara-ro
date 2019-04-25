@@ -27,7 +27,7 @@ before_deploy:
 deploy:
   provider: script
   skip_cleanup: true
-  script: rvm use $(< .ruby-version) do bundle exec mina deploy
+  script: bundle exec cap production deploy
   on:
     branch: master
 env:
