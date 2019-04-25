@@ -66,7 +66,7 @@ task :deploy do
         command %{touch tmp/restart.txt}
       end
       # invoke :'rake[sitemap:refresh]'
-      invoke :'sidekiq:restart'
+      # invoke :'sidekiq:restart'
     end
   end
 
