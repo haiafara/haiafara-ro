@@ -17,10 +17,12 @@ Rails.application.routes.draw do
   get 'pages/home'
   root 'pages#home'
 
-  # sidekiq
-  require 'sidekiq/web'
-  mount Sidekiq::Web => '/sidekiq'
-
   # devise
   devise_for :users
+
+  # sidekiq
+  authenticate :user, lambda { |user| user.admin? } do
+    require 'sidekiq/web'
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end
