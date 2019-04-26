@@ -5,12 +5,15 @@ Rails.application.routes.draw do
     resources :pois
     root to: "regions#index"
   end
+
   namespace :api, defaults: { format: :json } do
     resources :zones, only: [:show]
     resources :pois, only: [:show]
   end
+
   resources :zones, only: [:show], path: 'unde'
   resources :pois, only: [:show], path: 'pdi'
+
   get 'pages/home'
   root 'pages#home'
 

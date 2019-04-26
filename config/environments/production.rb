@@ -98,4 +98,5 @@ Rails.application.configure do
     password: Rails.application.credentials.mailer[:smtp_password],
     authentication: Rails.application.credentials.mailer[:smtp_authentication]
   }
+  config.action_mailer.default_url_options = { host: 'www.haiafara.ro', protocol: 'https' }
 end
