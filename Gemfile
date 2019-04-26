@@ -51,9 +51,10 @@ gem 'skylight'
 gem 'sentry-raven'
 
 # my gems
+gem 'administrate'
+gem 'devise'
 gem 'friendly_id', '~> 5.2.0'
 gem 'fast_jsonapi'
-gem 'administrate'
 gem 'rgeo-geojson'
 gem 'sitemap_generator'
 gem 'sidekiq'
