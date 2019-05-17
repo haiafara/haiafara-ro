@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "https://github.com/rails/webpacker",
-    "caniuse-lite": "^1.0.30000967",
+    "caniuse-lite": "^1.0.30000969",
     "css-loader": "^2.1.1",
     "leaflet": "^1.5.1",
     "postcss-cssnext": "^3.1.0",
