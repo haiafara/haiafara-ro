@@ -51,7 +51,7 @@
 
           container.onclick = function() {
             eventBus.$emit("toggleInfoPanel");
-          }
+          };
 
           return container;
         }
@@ -71,7 +71,7 @@
             layer.on({
               click: () => {
                 this.$router.push({ name: feature.properties.type, params: { id: feature.id }});
-              }
+              };
             })
             layer.bindTooltip(feature.properties.name);
           },
@@ -88,7 +88,7 @@
                   }
                 )
               }
-            )
+            );
           }
         }
       ).addTo(this.map);
