@@ -3,11 +3,11 @@
 </template>
 
 <script>
-  import { eventBus } from 'packs/haiafara'
-  import L from 'leaflet'
-  import 'leaflet/dist/leaflet.css'
-  import LF from 'leaflet.fullscreen'
-  import 'leaflet.fullscreen/Control.FullScreen.css'
+  import { eventBus } from 'packs/haiafara';
+  import L from "leaflet";
+  import "leaflet/dist/leaflet.css";
+  import LF from "leaflet.fullscreen";
+  import "leaflet.fullscreen/Control.FullScreen.css";
 
   export default {
     data() {
