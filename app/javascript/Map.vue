@@ -27,7 +27,7 @@
         this.map.fitBounds(bounds);
       })
       eventBus.$on("mapAddGeoJSON", (type, id, name, geometry) => {
-        this.geoJSONLayer.addData({ type: "Feature", properties: { type: type, name: name }, id, geometry });
+        this.geoJSONLayer.addData({ type: "Feature", properties: { name, type }, id, geometry });
       })
       eventBus.$on("mapClearGeoJSONLayer", () => {
         this.geoJSONLayer.clearLayers();
