@@ -6,6 +6,8 @@
   import { eventBus } from 'packs/haiafara'
   import L from 'leaflet'
   import 'leaflet/dist/leaflet.css'
+  import LF from 'leaflet.fullscreen'
+  import 'leaflet.fullscreen/Control.FullScreen.css'
 
   export default {
     data() {
@@ -54,7 +56,7 @@
           return container;
         }
       });
-      this.map = L.map('map', { maxZoom: 20, trackResize: true })
+      this.map = L.map('map', { fullscreenControl: true, maxZoom: 20, trackResize: true })
       var tileLayer = L.tileLayer("//tileserver.haiafara.ro/hot/{z}/{x}/{y}.png", {
         attribution: '&copy; Contribuitori <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         maxZoom: 20
