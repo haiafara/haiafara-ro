@@ -1,5 +1,6 @@
 # haiafara.ro
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/37d1b34d997a47709df0f85dcc6ca467)](https://app.codacy.com/app/haiafara/haiafara-ro?utm_source=github.com&utm_medium=referral&utm_content=haiafara/haiafara-ro&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.org/haiafara/haiafara-ro.svg?branch=master)](https://travis-ci.org/haiafara/haiafara-ro)
 [![Coverage Status](https://coveralls.io/repos/github/haiafara/haiafara-ro/badge.svg?branch=development)](https://coveralls.io/github/haiafara/haiafara-ro?branch=development)
 [![View performance data on Skylight](https://badges.skylight.io/status/P2iwuIZhzoOK.svg)](https://oss.skylight.io/app/applications/P2iwuIZhzoOK)
