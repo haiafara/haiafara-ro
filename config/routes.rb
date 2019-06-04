@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   namespace :admin do
     resources :regions
     resources :zones
     resources :pois
-    root to: "regions#index"
+    root to: 'regions#index'
   end
 
   namespace :api, defaults: { format: :json } do
@@ -21,7 +23,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   # sidekiq
-  authenticate :user, lambda { |user| user.admin? } do
+  authenticate :user, ->(user) { user.admin? } do
     require 'sidekiq/web'
     mount Sidekiq::Web => '/sidekiq'
   end
