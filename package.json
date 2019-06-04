@@ -2,20 +2,29 @@
   "name": "haiafara",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^4.0.2",
-    "caniuse-lite": "^1.0.30000963",
+    "@rails/webpacker": "^4.0.7",
+    "caniuse-lite": "^1.0.30000971",
     "css-loader": "^2.1.1",
-    "leaflet": "^1.3.4",
+    "leaflet": "^1.5.1",
+    "leaflet.fullscreen": "^1.4.5",
     "postcss-cssnext": "^3.1.0",
-    "typescript": "^3.4.5",
-    "vue": "^2.5.22",
-    "vue-loader": "^15.5.1",
+    "typescript": "^3.5.1",
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.0",
     "vue-router": "^3.0.6",
-    "vue-template-compiler": "^2.5.22",
-    "vuetify": "^1.5.13",
+    "vue-template-compiler": "^2.6.10",
+    "vuetify": "^1.5.14",
     "webpack": "^4.30.0"
   },
   "devDependencies": {
-    "webpack-dev-server": "^3.3.1"
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^5.2.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.5.1"
   }
 }
