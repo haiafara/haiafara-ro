@@ -14,7 +14,7 @@
     "vue-router": "^3.0.6",
     "vue-template-compiler": "^2.6.10",
     "vuetify": "^1.5.14",
-    "webpack": "^4.30.0"
+    "webpack": "^4.33.0"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
