@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :regions
     resources :zones
     resources :pois
+    resources :photos
     root to: 'regions#index'
   end
 
