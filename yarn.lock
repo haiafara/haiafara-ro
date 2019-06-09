@@ -4202,10 +4202,10 @@ lcid@^2.0.0:
   dependencies:
     invert-kv "^2.0.0"
 
-leaflet.fullscreen@^1.4.5:
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/leaflet.fullscreen/-/leaflet.fullscreen-1.4.5.tgz#3b558dece24d9b51ce762b2e00fe902727f47272"
-  integrity sha512-rQnZswt/bI2HXmYDWjvgu8GIgg5TAyJEVOXJ1SVpo+36G9/YJ4j8gt8bz7VQU5P/gs2tQNCFbuuWtKYpSw8gbA==
+leaflet.fullscreen@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/leaflet.fullscreen/-/leaflet.fullscreen-1.5.0.tgz#ea94858dcdbaf1f9766b0bbe84896b59c008d5c6"
+  integrity sha512-buOWgke+29iBnyFYQYndHkndVTABIBHoBLrWSjDd7wdd/5DeaP/leBDxY3q41546B0ky3z8AXi+1WVjOjhUlHQ==
 
 leaflet@^1.5.1:
   version "1.5.1"
