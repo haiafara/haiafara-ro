@@ -18,6 +18,7 @@ class POIDashboard < Administrate::BaseDashboard
     updated_at: Field::DateTime,
     overpass_query: Field::Text,
     recommended: Field::Boolean,
+    # photos: Field::HasMany
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -53,13 +54,14 @@ class POIDashboard < Administrate::BaseDashboard
     :name,
     :description,
     :overpass_query,
-    :recommended
+    :recommended,
+    # :photos
   ].freeze
 
   # Overwrite this method to customize how pois are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(poi)
-  #   "POI ##{poi.id}"
-  # end
+  def display_resource(poi)
+    poi.name.to_s
+  end
 end
