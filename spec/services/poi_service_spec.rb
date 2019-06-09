@@ -19,25 +19,37 @@ RSpec.describe POIService do
 
     context 'when there are no matches' do
       before do
-        allow(Underpass::QL::Query).to receive(:perform).and_return([])
+        allow(Underpass::QL::Query).to receive(:perform)
+          .and_return([])
       end
 
       it 'sends an email' do
+        ActiveJob::Base.queue_adapter = :test
         deliveries = ActionMailer::Base.deliveries
-        expect { POIService.update_shape_from_overpass(poi.id) }.to change{deliveries.count}.by(1)
-        expect(deliveries.last.subject).to eq(I18n.t('poi_mailer.no_match_notice.subject', poi_name: poi.name))
+        expect do
+          POIService.update_shape_from_overpass(poi.id)
+        end.to change { deliveries.count }.by(1)
+        expect(deliveries.last.subject).to eq(
+          I18n.t('poi_mailer.no_match_notice.subject', poi_name: poi.name)
+        )
       end
     end
 
     context 'when there is more than one match' do
       before do
-        allow(Underpass::QL::Query).to receive(:perform).and_return([point, point])
+        allow(Underpass::QL::Query).to receive(:perform)
+          .and_return([point, point])
       end
 
       it 'sends an email' do
+        ActiveJob::Base.queue_adapter = :test
         deliveries = ActionMailer::Base.deliveries
-        expect { POIService.update_shape_from_overpass(poi.id) }.to change{deliveries.count}.by(1)
-        expect(deliveries.last.subject).to eq(I18n.t('poi_mailer.many_matches_notice.subject', poi_name: poi.name))
+        expect do
+          POIService.update_shape_from_overpass(poi.id)
+        end.to change { deliveries.count }.by(1)
+        expect(deliveries.last.subject).to eq(
+          I18n.t('poi_mailer.many_matches_notice.subject', poi_name: poi.name)
+        )
       end
     end
   end
