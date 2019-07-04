@@ -12,7 +12,7 @@
     "typescript": "^3.5.2",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.0",
-    "vue-router": "^3.0.6",
+    "vue-router": "^3.0.7",
     "vue-template-compiler": "^2.6.10",
     "vuetify": "^1.5.16",
     "webpack": "^4.35.2"
