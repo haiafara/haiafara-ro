@@ -5,7 +5,7 @@
     "@rails/webpacker": "^4.0.7",
     "caniuse-lite": "^1.0.30000984",
     "css-loader": "^2.1.1",
-    "file-loader": "^4.0.0",
+    "file-loader": "^4.1.0",
     "leaflet": "^1.5.1",
     "leaflet.fullscreen": "^1.5.1",
     "postcss-cssnext": "^3.1.0",
