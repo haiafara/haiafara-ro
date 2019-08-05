@@ -16,6 +16,8 @@ install:
 - nvm install --lts
 - npm i -g yarn
 - yarn
+before_script:
+- psql -U postgres -c "create extension postgis"
 script:
 - bundle exec rails db:setup
 - bundle exec rails webpacker:compile
