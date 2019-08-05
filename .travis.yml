@@ -3,7 +3,7 @@ addons:
   postgresql: 9.6
   apt:
     packages:
-    - postgresql-9.6-postgis-2.3
+    - postgresql-9.6-postgis-2.4
 cache:
   bundler: true
   directories:
@@ -16,8 +16,6 @@ install:
 - nvm install --lts
 - npm i -g yarn
 - yarn
-before_script:
-- psql -U postgres -c "create extension postgis"
 script:
 - bundle exec rails db:setup
 - bundle exec rails webpacker:compile
