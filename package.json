@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^4.0.7",
-    "caniuse-lite": "^1.0.30000988",
+    "caniuse-lite": "^1.0.30000989",
     "css-loader": "^2.1.1",
     "file-loader": "^4.1.0",
     "leaflet": "^1.5.1",
