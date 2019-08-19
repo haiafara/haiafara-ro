@@ -2,6 +2,10 @@
   "name": "haiafara",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "@rails/webpacker": "^4.0.7",
     "caniuse-lite": "^1.0.30000989",
     "css-loader": "^2.1.1",
@@ -15,13 +19,10 @@
     "vue-router": "^3.1.2",
     "vue-template-compiler": "^2.6.10",
     "vuetify": "^1.5.17",
-    "webpack": "^4.39.2"
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/plugin-transform-runtime": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
     "babel-loader": "^8.0.6",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
@@ -31,7 +32,6 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^5.2.3",
     "lodash": "^4.17.15",
-    "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0"
   }
 }
