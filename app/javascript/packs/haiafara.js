@@ -36,7 +36,7 @@ const router = new VueRouter({
 // and go!
 
 document.addEventListener('DOMContentLoaded', () => {
-  const app = new Vue({
+  new Vue({
     el: '#app',
     router,
     render: h => h(App),
