@@ -37,3 +37,13 @@ Ubuntu
 MacOS
 
     brew install postgis
+
+## Make a user admin
+
+After registering a user, locally:
+
+    rails users:make_admin[user@email.com]
+    
+Via Capistrano:
+
+    cap production users:make_admin[user@email.com]
