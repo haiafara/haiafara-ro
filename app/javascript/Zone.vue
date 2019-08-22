@@ -6,15 +6,17 @@
     </div>
     <v-list subheader>
       <v-subheader>Puncte de interes recomandate</v-subheader>
-      <v-list-tile avatar
-        v-for="poi in this.infoPanelPOIs"
+      <v-list-tile
+        v-for="poi in infoPanelPOIs"
         :key="poi.attributes.name"
-        :to="{ name: 'poi', params: { id: poi.id }}">
+        avatar
+        :to="{ name: 'poi', params: { id: poi.id }}"
+      >
         <v-list-tile-avatar>
           <v-icon>place</v-icon>
         </v-list-tile-avatar>
         <v-list-tile-content>
-          <v-list-tile-title v-html="poi.attributes.name"></v-list-tile-title>
+          <v-list-tile-title v-html="poi.attributes.name" />
         </v-list-tile-content>
       </v-list-tile>
     </v-list>
@@ -32,21 +34,6 @@
         infoPanelPOIs: []
       }
     },
-    methods: {
-      updateZone(json) {
-        this.$nextTick(function() {
-          eventBus.$emit('appUpdateOnScreen', { type: json.data.type, name: json.data.attributes.name })
-          eventBus.$emit('mapFitBounds', json.data.attributes.bounds)
-          this.infoPanelTitle = json.data.attributes.name
-          this.infoPanelDescription = json.data.attributes.description
-          /* TODO - the following should be intersected with json.data.relationships.pois */
-          this.infoPanelPOIs = json.included
-          this.infoPanelPOIs.forEach(poi => {
-            eventBus.$emit('mapAddGeoJSON', poi.type, poi.id, poi.attributes.name, poi.attributes.shape)
-          })
-        })
-      }
-    },
     created() {
       var rj = window.resource_json
       if(
@@ -62,6 +49,26 @@
           return response.json()
         }).then((json) => {
           this.updateZone(json)
+        })
+      }
+    },
+    methods: {
+      updateZone(json) {
+        this.$nextTick(function() {
+          eventBus.$emit('appUpdateOnScreen', { type: json.data.type, name: json.data.attributes.name })
+          eventBus.$emit('mapFitBounds', json.data.attributes.bounds)
+          this.infoPanelTitle = json.data.attributes.name
+          this.infoPanelDescription = json.data.attributes.description
+          /* TODO - the following should be intersected with json.data.relationships.pois */
+          this.infoPanelPOIs = json.included
+          this.infoPanelPOIs.forEach(poi => {
+            eventBus.$emit('mapAddGeoJSON', {
+              type: poi.type,
+              id: poi.id,
+              name: poi.attributes.name,
+              geometry: poi.attributes.shape
+            })
+          })
         })
       }
     }
