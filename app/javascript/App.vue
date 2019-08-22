@@ -30,10 +30,10 @@
     <v-content>
       <v-container ma-0 pa-0 fluid fill-height class="b">
         <v-layout row wrap>
-           <v-flex :class="{'map-minheight': $vuetify.breakpoint.xsAndDown, 'collapsed': showInfoPanel && $vuetify.breakpoint.smAndUp }" id="map-container">
+          <v-flex :class="{'map-minheight': $vuetify.breakpoint.xsAndDown, 'collapsed': showInfoPanel && $vuetify.breakpoint.smAndUp }" id="map-container">
             <haiafara-map></haiafara-map>
           </v-flex>
-         <aside :class="{'collapsed': !showInfoPanel, 'sliding-panel': $vuetify.breakpoint.smAndUp}" id="info-panel">
+          <aside :class="{'collapsed': !showInfoPanel, 'sliding-panel': $vuetify.breakpoint.smAndUp}" id="info-panel">
             <router-view></router-view>
           </aside>
         </v-layout>
