@@ -62,7 +62,7 @@
           /* TODO - the following should be intersected with json.data.relationships.pois */
           this.infoPanelPOIs = json.included
           this.infoPanelPOIs.forEach(poi => {
-            eventBus.$emit('mapAddGeoJSON', {
+            eventBus.$emit('mapQueueGeoJSON', {
               type: poi.type,
               id: poi.id,
               name: poi.attributes.name,

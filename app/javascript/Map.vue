@@ -20,7 +20,7 @@ export default {
       flexChecker: undefined,
       resizeSensor: undefined,
       bounds: null,
-      geoJSONData: null
+      geoJSONQueue: []
     }
   },
   created () {
@@ -33,8 +33,8 @@ export default {
     eventBus.$on('mapFitBounds', (bounds) => {
       this.fitBounds(bounds)
     })
-    eventBus.$on('mapAddGeoJSON', (geoJSONData) => {
-      this.addGeoJSON(geoJSONData)
+    eventBus.$on('mapQueueGeoJSON', (geoJSONData) => {
+      this.queueGeoJSON(geoJSONData)
     })
     eventBus.$on('mapClearGeoJSONLayer', () => {
       if(this.geoJSONLayer) {
@@ -58,23 +58,26 @@ export default {
         this.bounds = bounds
       }
     },
-    addGeoJSON(geoJSONData) {
-      if(geoJSONData == undefined) {
-        geoJSONData = this.geoJSONData
-      }
+    queueGeoJSON(geoJSONData) {
+      this.geoJSONQueue.push(geoJSONData)
       if(this.flexStabilised) {
+        this.addGeoJSON()
+      }
+    },
+    addGeoJSON() {
+      for(var key in this.geoJSONQueue) {
+        var gd = this.geoJSONQueue[key]
         this.geoJSONLayer.addData({
           type: 'Feature',
           properties: {
-            name: geoJSONData.name,
-            type: geoJSONData.type
+            name: gd.name,
+            type: gd.type
           },
-          id: geoJSONData.id,
-          geometry: geoJSONData.geometry
+          id: gd.id,
+          geometry: gd.geometry
         })
-      } else {
-        this.geoJSONData = geoJSONData
       }
+      this.geoJSONQueue = []
     },
     checkFlexStabilized() {
       var newHeight = document.getElementById('map-container').clientHeight
