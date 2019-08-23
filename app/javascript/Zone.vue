@@ -16,7 +16,7 @@
           <v-icon>place</v-icon>
         </v-list-tile-avatar>
         <v-list-tile-content>
-          <v-list-tile-title v-html="poi.attributes.name" />
+          <v-list-tile-title>{{ poi.attributes.name }}</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
     </v-list>
@@ -62,7 +62,7 @@
           /* TODO - the following should be intersected with json.data.relationships.pois */
           this.infoPanelPOIs = json.included
           this.infoPanelPOIs.forEach(poi => {
-            eventBus.$emit('mapAddGeoJSON', {
+            eventBus.$emit('mapQueueGeoJSON', {
               type: poi.type,
               id: poi.id,
               name: poi.attributes.name,

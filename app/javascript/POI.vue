@@ -17,16 +17,6 @@
         description: ''
       }
     },
-    methods: {
-      updatePOI(json) {
-        this.$nextTick(function() {
-          eventBus.$emit('appUpdateOnScreen', { type: json.data.type, name: json.data.attributes.name })
-          eventBus.$emit('mapFitBounds', json.data.attributes.bounds)
-          this.title = json.data.attributes.name
-          this.description = json.data.attributes.description
-        })
-      }
-    },
     created() {
       var rj = window.resource_json
       if(
@@ -47,6 +37,16 @@
     },
     mounted() {
       eventBus.$emit('mapClearGeoJSONLayer')
+    },
+    methods: {
+      updatePOI(json) {
+        this.$nextTick(function() {
+          eventBus.$emit('appUpdateOnScreen', { type: json.data.type, name: json.data.attributes.name })
+          eventBus.$emit('mapFitBounds', json.data.attributes.bounds)
+          this.title = json.data.attributes.name
+          this.description = json.data.attributes.description
+        })
+      }
     }
   }
 </script>

@@ -1,6 +1,12 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" fixed clipped app>
+    <LightBox :images="images" />
+    <v-navigation-drawer
+      v-model="drawer"
+      fixed
+      clipped
+      app
+    >
       <v-list dense>
         <v-list-tile @click="focusTown">
           <v-list-tile-action>
@@ -20,21 +26,45 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar color="light-blue" clipped-left dense dark app>
-      <v-toolbar-side-icon @click.stop="toggleNavigationDrawer"></v-toolbar-side-icon>
-      <v-btn icon @click="toggleInfoPanel">
+    <v-toolbar
+      color="light-blue"
+      clipped-left
+      dense
+      dark
+      app
+    >
+      <v-toolbar-side-icon @click.stop="toggleNavigationDrawer" />
+      <v-btn
+        icon
+        @click="toggleInfoPanel"
+      >
         <v-icon>info</v-icon>
       </v-btn>
       <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
     </v-toolbar>
     <v-content>
-      <v-container ma-0 pa-0 fluid fill-height class="b">
-        <v-layout row wrap>
-          <v-flex :class="{'map-minheight': $vuetify.breakpoint.xsAndDown, 'collapsed': showInfoPanel && $vuetify.breakpoint.smAndUp }" id="map-container">
-            <haiafara-map></haiafara-map>
+      <v-container
+        ma-0
+        pa-0
+        fluid
+        fill-height
+        class="b"
+      >
+        <v-layout
+          row
+          wrap
+        >
+          <v-flex
+            id="map-container"
+            :class="{'map-minheight': $vuetify.breakpoint.xsAndDown, 'collapsed': showInfoPanel && $vuetify.breakpoint.smAndUp }"
+          >
+            <haiafara-map />
           </v-flex>
-          <aside :class="{'collapsed': !showInfoPanel, 'sliding-panel': $vuetify.breakpoint.smAndUp}" id="info-panel">
-            <router-view></router-view>
+          <aside
+            id="info-panel"
+            :class="{'collapsed': !showInfoPanel, 'sliding-panel': $vuetify.breakpoint.smAndUp}"
+          >
+            <router-view />
           </aside>
         </v-layout>
       </v-container>
@@ -45,16 +75,31 @@
 <script>
   import { eventBus } from 'packs/haiafara'
   import Map from './Map.vue'
+  import LightBox from 'vue-image-lightbox'
+  import 'vue-image-lightbox/dist/vue-image-lightbox.min.css'
 
   export default {
     components: {
-      'haiafara-map': Map
+      'haiafara-map': Map,
+      LightBox
     },
     data() {
       return {
         showInfoPanel: false,
         drawer: false,
-        on_screen: null
+        on_screen: null,
+        images: [
+          {
+            thumb: 'https://placekitten.com/200/200',
+            src: 'https://placekitten.com/1000/500',
+            caption: 'cat'
+          },
+          {
+            thumb: 'https://placekitten.com/200/200',
+            src: 'https://placekitten.com/1000/500',
+            caption: 'cat'
+          }
+        ]
       }
     },
     computed: {
@@ -64,8 +109,16 @@
         return title
       }
     },
+    created() {
+      eventBus.$on('appUpdateOnScreen', (on_screen) => {
+        this.on_screen = on_screen
+      })
+      eventBus.$on('toggleInfoPanel', () => {
+        this.toggleInfoPanel()
+      })
+    },
     methods: {
-      toggleNavigationDrawer: function (event) {
+      toggleNavigationDrawer: function () {
         this.drawer = !this.drawer;
         setTimeout(() => {
           eventBus.$emit('mapInvalidateSize')
@@ -77,20 +130,12 @@
           eventBus.$emit('mapInvalidateSize')
         }, 200)
       },
-      focusTown: function (event) {
+      focusTown: function () {
         eventBus.$emit('mapSetView', [47.6623, 23.6970], 15)
       },
-      focusChurch: function (event) {
+      focusChurch: function () {
         eventBus.$emit('mapSetView', [47.66283, 23.69984], 18)
       }
-    },
-    created() {
-      eventBus.$on('appUpdateOnScreen', (on_screen) => {
-        this.on_screen = on_screen
-      })
-      eventBus.$on('toggleInfoPanel', () => {
-        this.toggleInfoPanel()
-      })
     }
   }
 </script>
