@@ -1,9 +1,6 @@
 class API::POIsController < ApplicationController
+  include POILoader
   def show
-    @poi = POI.friendly.find(params[:id])
-    render json: POISerializer.new(
-      @poi,
-      include: [:photos]
-    ).serialized_json
+    render json: @resource_json
   end
 end
