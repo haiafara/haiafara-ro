@@ -26,18 +26,7 @@
       return {
         title: '',
         description: '',
-        images: [
-          {
-            thumb: 'https://placekitten.com/200/200',
-            src: 'https://placekitten.com/1000/500',
-            caption: 'cat'
-          },
-          {
-            thumb: 'https://placekitten.com/200/200',
-            src: 'https://placekitten.com/1000/500',
-            caption: 'cat'
-          }
-        ]
+        images: []
       }
     },
     created() {
@@ -68,6 +57,16 @@
           eventBus.$emit('mapFitBounds', json.data.attributes.bounds)
           this.title = json.data.attributes.name
           this.description = json.data.attributes.description
+          /* TODO - the following should be intersected with json.data.relationships.pois */
+          this.images = []
+          json.included.forEach(image => {
+            var attributes = image.attributes
+            this.images.push({
+              thumb: attributes.thumbnail,
+              src: attributes.large,
+              caption: attributes.name + ' ' + attributes.description
+            })
+          })
         })
       },
       openLightBox(index) {

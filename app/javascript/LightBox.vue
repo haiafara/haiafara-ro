@@ -2,8 +2,9 @@
   <div id="lightbox">
     <LightBox
       ref="lightbox"
+      show-caption="true"
+      show-light-box="false"
       :images="images"
-      :show-light-box="false"
     />
   </div>
 </template>
