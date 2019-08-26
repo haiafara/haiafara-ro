@@ -1,20 +1,36 @@
 <template>
   <div>
-    <div class="text">
+    <v-container pb-0>
       <h1>{{ title }}</h1>
       {{ description }}
-      <ul>
-        <li
+    </v-container>
+    <v-container
+      grid-list-sm
+      fluid
+    >
+      <h2>Galerie Foto</h2>
+      <v-layout
+        row
+        wrap
+      >
+        <v-flex
           v-for="(image, index) in (images)"
           :key="image.src"
+          xs4
         >
-          <img
-            :src="image.thumb"
-            @click="openLightBox(index)"
+          <v-card
+            flat
+            tile
           >
-        </li>
-      </ul>
-    </div>
+            <v-img
+              :src="image.thumb"
+              aspect-ratio="1"
+              @click="openLightBox(index)"
+            />
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </v-container>
   </div>
 </template>
 
