@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <LightBox :images="images" />
+    <haiafara-lightbox />
     <v-navigation-drawer
       v-model="drawer"
       fixed
@@ -75,31 +75,18 @@
 <script>
   import { eventBus } from 'packs/haiafara'
   import Map from './Map.vue'
-  import LightBox from 'vue-image-lightbox'
-  import 'vue-image-lightbox/dist/vue-image-lightbox.min.css'
+  import LightBox from './LightBox'
 
   export default {
     components: {
       'haiafara-map': Map,
-      LightBox
+      'haiafara-lightbox': LightBox
     },
     data() {
       return {
         showInfoPanel: false,
         drawer: false,
-        on_screen: null,
-        images: [
-          {
-            thumb: 'https://placekitten.com/200/200',
-            src: 'https://placekitten.com/1000/500',
-            caption: 'cat'
-          },
-          {
-            thumb: 'https://placekitten.com/200/200',
-            src: 'https://placekitten.com/1000/500',
-            caption: 'cat'
-          }
-        ]
+        on_screen: null
       }
     },
     computed: {

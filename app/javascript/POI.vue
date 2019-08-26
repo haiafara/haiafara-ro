@@ -3,6 +3,17 @@
     <div class="text">
       <h1>{{ title }}</h1>
       {{ description }}
+      <ul>
+        <li
+          v-for="(image, index) in (images)"
+          :key="image.src"
+        >
+          <img
+            :src="image.thumb"
+            @click="openLightBox(index)"
+          >
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -14,7 +25,19 @@
     data() {
       return {
         title: '',
-        description: ''
+        description: '',
+        images: [
+          {
+            thumb: 'https://placekitten.com/200/200',
+            src: 'https://placekitten.com/1000/500',
+            caption: 'cat'
+          },
+          {
+            thumb: 'https://placekitten.com/200/200',
+            src: 'https://placekitten.com/1000/500',
+            caption: 'cat'
+          }
+        ]
       }
     },
     created() {
@@ -46,6 +69,9 @@
           this.title = json.data.attributes.name
           this.description = json.data.attributes.description
         })
+      },
+      openLightBox(index) {
+        eventBus.$emit('lightboxOpen', this.images, index)
       }
     }
   }
