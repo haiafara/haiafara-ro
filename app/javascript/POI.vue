@@ -4,17 +4,17 @@
       <h1>{{ title }}</h1>
       {{ description }}
     </v-container>
-    <haiafara-image-gallery :images="images"></haiafara-image-gallery>
+    <haiafara-photo-gallery :images="images" />
   </div>
 </template>
 
 <script>
   import { eventBus } from 'packs/haiafara'
-  import ImageGallery from './ImageGallery'
+  import PhotoGallery from './PhotoGallery'
 
   export default {
     components: {
-      'haiafara-image-gallery': ImageGallery
+      'haiafara-photo-gallery': PhotoGallery
     },
     data() {
       return {

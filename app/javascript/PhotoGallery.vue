@@ -25,7 +25,7 @@
         </v-card>
       </v-flex>
     </v-layout>
-  </v-container>    
+  </v-container>
 </template>
 
 <script>
@@ -37,7 +37,10 @@ export default {
       type: String,
       default: 'Galerie Foto'
     },
-    images: Array
+    images: {
+      type: Array,
+      default: () => []
+    }
   },
   methods: {
     openLightBox(index) {
