@@ -2,6 +2,9 @@
 
 import Vue from 'vue'
 
+import VueLazyLoad from 'vue-lazyload'
+Vue.use(VueLazyLoad)
+
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 Vue.use(Vuetify)
@@ -36,7 +39,7 @@ const router = new VueRouter({
 // and go!
 
 document.addEventListener('DOMContentLoaded', () => {
-  const app = new Vue({
+  new Vue({
     el: '#app',
     router,
     render: h => h(App),

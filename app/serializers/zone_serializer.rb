@@ -10,4 +10,5 @@ class ZoneSerializer
   has_many :pois, id_method_name: :slug do |object|
     object.pois.recommended
   end
+  has_many :photos
 end

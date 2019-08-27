@@ -1,9 +1,6 @@
 class API::ZonesController < ApplicationController
+  include ZoneLoader
   def show
-    @zone = Zone.includes(:pois).friendly.find(params[:id])
-    render json: ZoneSerializer.new(
-      @zone,
-      include: [:pois]
-    ).serialized_json
+    render json: @resource_json
   end
 end
