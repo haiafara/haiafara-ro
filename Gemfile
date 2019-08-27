@@ -92,7 +92,7 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   # gem 'chromedriver-helper'
   gem 'simplecov', require: false
-  gem 'coveralls', require: false
+  gem 'codacy-coverage', require: false
   gem 'shrine-memory'
 end
 
