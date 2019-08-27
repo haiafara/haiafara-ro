@@ -52,12 +52,16 @@ gem 'sentry-raven'
 
 # my gems
 gem 'administrate'
+gem 'administrate-field-shrine', github: 'haiafara/administrate-field-shrine'
+gem 'aws-sdk-s3'
 gem 'devise'
 gem 'friendly_id', '~> 5.2.0'
 gem 'fast_jsonapi'
+gem 'image_processing', '~> 1.0'
 gem 'rgeo-geojson'
 gem 'sitemap_generator'
 gem 'sidekiq'
+gem 'shrine'
 
 gem 'underpass'
 
@@ -89,6 +93,7 @@ group :test do
   # gem 'chromedriver-helper'
   gem 'simplecov', require: false
   gem 'codacy-coverage', require: false
+  gem 'shrine-memory'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

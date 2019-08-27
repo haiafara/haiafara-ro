@@ -1,20 +1,23 @@
 <template>
   <div>
-    <div class="text">
-      <h1>{{ infoPanelTitle }}</h1>
-      {{ infoPanelDescription }}
-    </div>
+    <v-container pb-0>
+      <h1>{{ title }}</h1>
+      {{ description }}
+    </v-container>
+    <haiafara-photo-gallery :photos="photos" />
     <v-list subheader>
       <v-subheader>Puncte de interes recomandate</v-subheader>
-      <v-list-tile avatar
-        v-for="poi in this.infoPanelPOIs"
+      <v-list-tile
+        v-for="poi in pois"
         :key="poi.attributes.name"
-        :to="{ name: 'poi', params: { id: poi.id }}">
+        avatar
+        :to="{ name: 'poi', params: { id: poi.id }}"
+      >
         <v-list-tile-avatar>
           <v-icon>place</v-icon>
         </v-list-tile-avatar>
         <v-list-tile-content>
-          <v-list-tile-title v-html="poi.attributes.name"></v-list-tile-title>
+          <v-list-tile-title>{{ poi.attributes.name }}</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
     </v-list>
@@ -23,28 +26,22 @@
 
 <script>
   import { eventBus } from 'packs/haiafara'
+  import PhotoGallery from './PhotoGallery'
+  import { load_included } from './mixins/load_included'
 
   export default {
+    components: {
+      'haiafara-photo-gallery': PhotoGallery
+    },
+    mixins: [ load_included ],
     data() {
       return {
-        infoPanelTitle: '',
-        infoPanelDescription: '',
-        infoPanelPOIs: []
-      }
-    },
-    methods: {
-      updateZone(json) {
-        this.$nextTick(function() {
-          eventBus.$emit('appUpdateOnScreen', { type: json.data.type, name: json.data.attributes.name })
-          eventBus.$emit('mapFitBounds', json.data.attributes.bounds)
-          this.infoPanelTitle = json.data.attributes.name
-          this.infoPanelDescription = json.data.attributes.description
-          /* TODO - the following should be intersected with json.data.relationships.pois */
-          this.infoPanelPOIs = json.included
-          this.infoPanelPOIs.forEach(poi => {
-            eventBus.$emit('mapAddGeoJSON', poi.type, poi.id, poi.attributes.name, poi.attributes.shape)
-          })
-        })
+        title: '',
+        description: '',
+        relationships: null,
+        included: null,
+        pois: [],
+        photos: []
       }
     },
     created() {
@@ -62,6 +59,25 @@
           return response.json()
         }).then((json) => {
           this.updateZone(json)
+        })
+      }
+    },
+    methods: {
+      updateZone(json) {
+        this.$nextTick(function() {
+          eventBus.$emit('appUpdateOnScreen', { type: json.data.type, name: json.data.attributes.name })
+          eventBus.$emit('mapFitBounds', json.data.attributes.bounds)
+
+          this.title = json.data.attributes.name
+          this.description = json.data.attributes.description
+          this.pois = []
+          this.photos = []
+
+          this.relationships = json.data.relationships
+          this.included = json.included
+
+          this.loadIncludedPOIs()
+          this.loadIncludedPhotos()
         })
       }
     }

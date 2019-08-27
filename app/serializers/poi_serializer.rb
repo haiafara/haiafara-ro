@@ -10,4 +10,5 @@ class POISerializer
     # now, why wouldn't it be reversed
     [[bb.min_y, bb.min_x], [bb.max_y, bb.max_x]]
   end
+  has_many :photos
 end

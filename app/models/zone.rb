@@ -7,6 +7,7 @@ class Zone < ApplicationRecord
   friendly_id :name, use: :slugged
 
   belongs_to :region
+  has_many :photos, as: :photoable
   has_and_belongs_to_many :pois, class_name: 'POI'
 
   scope :with_expanded_bounding_box, lambda {
