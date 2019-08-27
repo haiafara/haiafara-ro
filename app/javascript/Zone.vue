@@ -1,13 +1,14 @@
 <template>
   <div>
-    <div class="text">
-      <h1>{{ infoPanelTitle }}</h1>
-      {{ infoPanelDescription }}
-    </div>
+    <v-container pb-0>
+      <h1>{{ title }}</h1>
+      {{ description }}
+    </v-container>
+    <haiafara-photo-gallery :photos="photos" />
     <v-list subheader>
       <v-subheader>Puncte de interes recomandate</v-subheader>
       <v-list-tile
-        v-for="poi in infoPanelPOIs"
+        v-for="poi in pois"
         :key="poi.attributes.name"
         avatar
         :to="{ name: 'poi', params: { id: poi.id }}"
@@ -25,13 +26,22 @@
 
 <script>
   import { eventBus } from 'packs/haiafara'
+  import PhotoGallery from './PhotoGallery'
+  import { load_included } from './mixins/load_included'
 
   export default {
+    components: {
+      'haiafara-photo-gallery': PhotoGallery
+    },
+    mixins: [ load_included ],
     data() {
       return {
-        infoPanelTitle: '',
-        infoPanelDescription: '',
-        infoPanelPOIs: []
+        title: '',
+        description: '',
+        relationships: null,
+        included: null,
+        pois: [],
+        photos: []
       }
     },
     created() {
@@ -57,18 +67,17 @@
         this.$nextTick(function() {
           eventBus.$emit('appUpdateOnScreen', { type: json.data.type, name: json.data.attributes.name })
           eventBus.$emit('mapFitBounds', json.data.attributes.bounds)
-          this.infoPanelTitle = json.data.attributes.name
-          this.infoPanelDescription = json.data.attributes.description
-          /* TODO - the following should be intersected with json.data.relationships.pois */
-          this.infoPanelPOIs = json.included
-          this.infoPanelPOIs.forEach(poi => {
-            eventBus.$emit('mapQueueGeoJSON', {
-              type: poi.type,
-              id: poi.id,
-              name: poi.attributes.name,
-              geometry: poi.attributes.shape
-            })
-          })
+
+          this.title = json.data.attributes.name
+          this.description = json.data.attributes.description
+          this.pois = []
+          this.photos = []
+
+          this.relationships = json.data.relationships
+          this.included = json.included
+
+          this.loadIncludedPOIs()
+          this.loadIncludedPhotos()
         })
       }
     }

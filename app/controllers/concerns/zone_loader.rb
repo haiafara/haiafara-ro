@@ -9,7 +9,7 @@ module ZoneLoader
     @zone = Zone.includes(:pois).friendly.find(params[:id])
     @resource_json = ZoneSerializer.new(
       @zone,
-      include: [:pois]
+      include: [:pois, :photos]
     ).serialized_json
   end
 end

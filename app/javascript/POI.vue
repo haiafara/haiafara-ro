@@ -4,23 +4,27 @@
       <h1>{{ title }}</h1>
       {{ description }}
     </v-container>
-    <haiafara-photo-gallery :images="images" />
+    <haiafara-photo-gallery :photos="photos" />
   </div>
 </template>
 
 <script>
   import { eventBus } from 'packs/haiafara'
   import PhotoGallery from './PhotoGallery'
+  import { load_included } from './mixins/load_included'
 
   export default {
     components: {
       'haiafara-photo-gallery': PhotoGallery
     },
+    mixins: [ load_included ],
     data() {
       return {
         title: '',
         description: '',
-        images: []
+        relationships: null,
+        included: null,
+        photos: []
       }
     },
     created() {
@@ -49,18 +53,15 @@
         this.$nextTick(function() {
           eventBus.$emit('appUpdateOnScreen', { type: json.data.type, name: json.data.attributes.name })
           eventBus.$emit('mapFitBounds', json.data.attributes.bounds)
+
           this.title = json.data.attributes.name
           this.description = json.data.attributes.description
-          /* TODO - the following should be intersected with json.data.relationships.pois */
-          this.images = []
-          json.included.forEach(image => {
-            var attributes = image.attributes
-            this.images.push({
-              thumb: attributes.thumbnail,
-              src: attributes.large,
-              caption: attributes.name + ' ' + attributes.description
-            })
-          })
+          this.photos = []
+
+          this.relationships = json.data.relationships
+          this.included = json.included
+
+          this.loadIncludedPhotos()
         })
       }
     }

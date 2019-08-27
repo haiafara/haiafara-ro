@@ -9,7 +9,7 @@ class PhotoDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     photoable: Field::Polymorphic.with_options(
-      classes: [POI]
+      classes: [POI, Zone]
     ),
     id: Field::Number,
     name: Field::String,

@@ -9,8 +9,8 @@
       wrap
     >
       <v-flex
-        v-for="(image, index) in (images)"
-        :key="image.src"
+        v-for="(photo, index) in (photos)"
+        :key="photo.src"
         xs4
       >
         <v-card
@@ -18,7 +18,7 @@
           tile
         >
           <v-img
-            :src="image.thumb"
+            :src="photo.thumb"
             aspect-ratio="1"
             @click="openLightBox(index)"
           />
@@ -37,14 +37,14 @@ export default {
       type: String,
       default: 'Galerie Foto'
     },
-    images: {
+    photos: {
       type: Array,
       default: () => []
     }
   },
   methods: {
     openLightBox(index) {
-      eventBus.$emit('lightboxOpen', this.$props.images, index)
+      eventBus.$emit('lightboxOpen', this.$props.photos, index)
     }
   }
 }
