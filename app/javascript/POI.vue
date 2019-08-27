@@ -4,40 +4,18 @@
       <h1>{{ title }}</h1>
       {{ description }}
     </v-container>
-    <v-container
-      grid-list-sm
-      fluid
-    >
-      <h2>Galerie Foto</h2>
-      <v-layout
-        row
-        wrap
-      >
-        <v-flex
-          v-for="(image, index) in (images)"
-          :key="image.src"
-          xs4
-        >
-          <v-card
-            flat
-            tile
-          >
-            <v-img
-              :src="image.thumb"
-              aspect-ratio="1"
-              @click="openLightBox(index)"
-            />
-          </v-card>
-        </v-flex>
-      </v-layout>
-    </v-container>
+    <haiafara-image-gallery :images="images"></haiafara-image-gallery>
   </div>
 </template>
 
 <script>
   import { eventBus } from 'packs/haiafara'
+  import ImageGallery from './ImageGallery'
 
   export default {
+    components: {
+      'haiafara-image-gallery': ImageGallery
+    },
     data() {
       return {
         title: '',
@@ -84,9 +62,6 @@
             })
           })
         })
-      },
-      openLightBox(index) {
-        eventBus.$emit('lightboxOpen', this.images, index)
       }
     }
   }
