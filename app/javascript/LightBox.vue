@@ -2,8 +2,8 @@
   <div id="lightbox">
     <LightBox
       ref="lightbox"
-      show-caption="true"
-      show-light-box="false"
+      :show-caption="true"
+      :show-light-box="false"
       :images="images"
     />
   </div>
