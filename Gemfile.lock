@@ -122,8 +122,6 @@ GEM
       xpath (~> 3.2)
     childprocess (1.0.1)
       rake (< 13.0)
-    codacy-coverage (2.1.0)
-      simplecov
     coderay (1.1.2)
     coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
@@ -411,7 +409,6 @@ DEPENDENCIES
   capistrano-rvm
   capistrano-sidekiq
   capybara (>= 2.15)
-  codacy-coverage
   coffee-rails (~> 5.0)
   coveralls
   database_cleaner

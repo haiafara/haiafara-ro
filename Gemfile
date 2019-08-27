@@ -93,7 +93,6 @@ group :test do
   # gem 'chromedriver-helper'
   gem 'simplecov', require: false
   gem 'coveralls', require: false
-  gem 'codacy-coverage', require: false
   gem 'shrine-memory'
 end
 

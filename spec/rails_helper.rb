@@ -1,8 +1,6 @@
 if ENV['CI'] == 'true'
   require 'coveralls'
   Coveralls.wear!
-  require 'codacy-coverage'
-  Codacy::Reporter.start
 end
 
 require 'simplecov'
