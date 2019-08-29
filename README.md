@@ -13,7 +13,6 @@
 
 ## Uses
 
-*   [Vuetify](https://vuetifyjs.com/en/)
 *   [Leaflet](https://leafletjs.com/)
 *   [Leaflet.fullscreen](https://github.com/Leaflet/Leaflet.fullscreen)
 *   [CSS Element Queries](https://github.com/marcj/css-element-queries)

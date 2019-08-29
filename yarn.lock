@@ -8463,11 +8463,6 @@ vue@^2.6.10:
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha512-ImThpeNU9HbdZL3utgMCq0oiMzAkt1mcgy3/E6zWC/G6AaQoeuFdsl9nDhTDU3X1R6FK7nsIUuRACVcjI+A2GQ==
 
-vuetify@^1.5.17:
-  version "1.5.17"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-1.5.17.tgz#2c6a8c4541bd6bdc56d80cad1b2cc862c085345e"
-  integrity sha512-83GnhRIvxq4y/o205m/piYPMhv4YCpfcMej+1aJgivA4PZHWkz0m/kNzQ6RlBfmWcjwm/YBrwq1TqqT9olVE9g==
-
 watchpack@^1.5.0, watchpack@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-1.6.0.tgz#4bc12c2ebe8aa277a71f1d3f14d685c7b446cd00"

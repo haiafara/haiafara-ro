@@ -5,12 +5,6 @@ import Vue from 'vue'
 import VueLazyLoad from 'vue-lazyload'
 Vue.use(VueLazyLoad)
 
-import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css'
-Vue.use(Vuetify)
-
-// start the event bus, beep beep
-
 export const eventBus = new Vue()
 
 // import modules
