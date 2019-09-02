@@ -97,7 +97,14 @@ export default {
       }
     },
     attachMap() {
-      this.map = L.map('map', { fullscreenControl: true, zoomControl: false, maxZoom: 20, trackResize: true })
+      this.map = L.map('map', {
+        fullscreenControl: true,
+        fullscreenControlOptions: {
+          position: 'topright'
+        },
+        maxZoom: 20,
+        trackResize: true
+      })
 
       var CustomControl = L.Control.extend({
         options: {
@@ -122,8 +129,6 @@ export default {
         }
       })
       this.map.addControl(new CustomControl())
-
-      new L.Control.Zoom({ position: 'topright' }).addTo(this.map)
 
       var tileLayer = L.tileLayer('//tileserver.haiafara.ro/hot/{z}/{x}/{y}.png', {
         attribution: "&copy; Contribuitori <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
