@@ -1,31 +1,18 @@
 <template>
-  <v-container
-    grid-list-sm
-    fluid
-  >
+  <div>
     <h2>{{ title }}</h2>
-    <v-layout
-      row
-      wrap
-    >
-      <v-flex
+    <ul>
+      <li
         v-for="(photo, index) in (photos)"
         :key="photo.src"
-        xs4
       >
-        <v-card
-          flat
-          tile
+        <img
+          :src="photo.thumb"
+          @click="openLightBox(index)"
         >
-          <v-img
-            :src="photo.thumb"
-            aspect-ratio="1"
-            @click="openLightBox(index)"
-          />
-        </v-card>
-      </v-flex>
-    </v-layout>
-  </v-container>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>

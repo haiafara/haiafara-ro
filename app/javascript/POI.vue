@@ -1,9 +1,7 @@
 <template>
   <div>
-    <v-container pb-0>
-      <h1>{{ title }}</h1>
-      {{ description }}
-    </v-container>
+    <h1>{{ title }}</h1>
+    {{ description }}
     <haiafara-photo-gallery :photos="photos" />
   </div>
 </template>

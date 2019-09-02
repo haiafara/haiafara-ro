@@ -9,10 +9,12 @@ export const eventBus = new Vue()
 
 // import modules
 
-import App from '../App.vue'
-import Home from '../Home.vue'
-import Zone from '../Zone.vue'
-import POI from '../POI.vue'
+import App from 'App.vue'
+import Home from 'Home.vue'
+import Zone from 'Zone.vue'
+import POI from 'POI.vue'
+
+import 'packs/haiafara.css'
 
 // router
 

@@ -1,26 +1,21 @@
 <template>
   <div>
-    <v-container pb-0>
-      <h1>{{ title }}</h1>
-      {{ description }}
-    </v-container>
+    <h1>{{ title }}</h1>
+    {{ description }}
     <haiafara-photo-gallery :photos="photos" />
-    <v-list subheader>
-      <v-subheader>Puncte de interes recomandate</v-subheader>
-      <v-list-tile
+    <h2>Puncte de interes recomandate</h2>
+    <ul>
+      <li
         v-for="poi in pois"
         :key="poi.attributes.name"
-        avatar
-        :to="{ name: 'poi', params: { id: poi.id }}"
       >
-        <v-list-tile-avatar>
-          <v-icon>place</v-icon>
-        </v-list-tile-avatar>
-        <v-list-tile-content>
-          <v-list-tile-title>{{ poi.attributes.name }}</v-list-tile-title>
-        </v-list-tile-content>
-      </v-list-tile>
-    </v-list>
+        <router-link
+          :to="{ name: 'poi', params: { id: poi.id }}"
+        >
+          {{ poi.attributes.name }}
+        </router-link>
+      </li>
+    </ul>
   </div>
 </template>
 

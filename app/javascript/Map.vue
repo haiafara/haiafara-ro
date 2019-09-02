@@ -43,7 +43,7 @@ export default {
     })
   },
   mounted () {
-    this.resizeSensor = new ResizeSensor(document.getElementById('map-container'), () => {
+    this.resizeSensor = new ResizeSensor(document.getElementById('map'), () => {
       this.checkFlexStabilized()
     })
   },
@@ -80,7 +80,7 @@ export default {
       this.geoJSONQueue = []
     },
     checkFlexStabilized() {
-      var newHeight = document.getElementById('map-container').clientHeight
+      var newHeight = document.getElementById('map').clientHeight
       if(newHeight != 0 && newHeight == this.flexHeight) {
         this.flexStabilised = true
         this.resizeSensor.detach()
@@ -97,7 +97,7 @@ export default {
       }
     },
     attachMap() {
-      this.map = L.map('map', { fullscreenControl: true, maxZoom: 20, trackResize: true })
+      this.map = L.map('map', { fullscreenControl: true, zoomControl: false, maxZoom: 20, trackResize: true })
 
       var CustomControl = L.Control.extend({
         options: {
@@ -122,6 +122,8 @@ export default {
         }
       })
       this.map.addControl(new CustomControl())
+
+      new L.Control.Zoom({ position: 'topright' }).addTo(this.map)
 
       var tileLayer = L.tileLayer('//tileserver.haiafara.ro/hot/{z}/{x}/{y}.png', {
         attribution: "&copy; Contribuitori <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
@@ -165,7 +167,6 @@ export default {
 <style>
   #map {
     z-index: 0;
-    width: 100%;
     height: 100%;
   }
 </style>

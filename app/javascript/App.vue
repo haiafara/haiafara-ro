@@ -1,90 +1,40 @@
 <template>
-  <v-app id="inspire">
+  <div class="h-screen">
     <haiafara-lightbox />
-    <v-navigation-drawer
-      v-model="drawer"
-      fixed
-      clipped
-      app
+    <haiafara-navigation />
+    <div
+      id="content"
+      class="h-full w-fill"
     >
-      <v-list dense>
-        <v-list-tile @click="focusTown">
-          <v-list-tile-action>
-            <v-icon>home</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Tot orașul</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <v-list-tile @click="focusChurch">
-          <v-list-tile-action>
-            <v-icon>contact_mail</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Biserica Romano-Catolică</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-toolbar
-      color="light-blue"
-      clipped-left
-      dense
-      dark
-      app
-    >
-      <v-toolbar-side-icon @click.stop="toggleNavigationDrawer" />
-      <v-btn
-        icon
-        @click="toggleInfoPanel"
+      <aside
+        id="info-panel"
+        class="absolute p-2"
+        :class="{'collapsed': !showInfoPanel, 'sliding-panel': true}"
       >
-        <v-icon>info</v-icon>
-      </v-btn>
-      <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
-    </v-toolbar>
-    <v-content>
-      <v-container
-        ma-0
-        pa-0
-        fluid
-        fill-height
-        class="b"
-      >
-        <v-layout
-          row
-          wrap
-        >
-          <v-flex
-            id="map-container"
-            :class="{'map-minheight': $vuetify.breakpoint.xsAndDown, 'collapsed': showInfoPanel && $vuetify.breakpoint.smAndUp }"
-          >
-            <haiafara-map />
-          </v-flex>
-          <aside
-            id="info-panel"
-            :class="{'collapsed': !showInfoPanel, 'sliding-panel': $vuetify.breakpoint.smAndUp}"
-          >
-            <router-view />
-          </aside>
-        </v-layout>
-      </v-container>
-    </v-content>
-  </v-app>
+        <div class="rounded-lg bg-white p-3 h-full">
+          <router-view />
+        </div>
+      </aside>
+      <haiafara-map />
+    </div>
+  </div>
 </template>
 
 <script>
   import { eventBus } from 'packs/haiafara'
+  import Navigation from './Navigation'
   import Map from './Map.vue'
   import LightBox from './LightBox'
 
   export default {
     components: {
       'haiafara-map': Map,
-      'haiafara-lightbox': LightBox
+      'haiafara-lightbox': LightBox,
+      'haiafara-navigation': Navigation
     },
     data() {
       return {
-        showInfoPanel: false,
+        showInfoPanel: true,
         drawer: false,
         on_screen: null
       }
@@ -130,7 +80,6 @@
 <style>
   /* TODO - separate this for mobile */
   #map-container {
-    width: 100%;
     transition: padding 0.2s;
   }
 
@@ -143,20 +92,22 @@
   }
 
   #info-panel {
+    z-index: 3;
   }
 
   #info-panel.sliding-panel {
-    background: #fff;
-    position: absolute;
-    height: 100%;
     overflow: auto;
-    border-right: 1px solid #ddd;
     width: 450px;
     transition: transform 0.2s;
     transform: translateX(0px);
+    height: calc(100vh - 56px);
   }
 
   #info-panel.sliding-panel.collapsed {
     transform: translateX(-450px);
+  }
+
+  #content {
+    padding-top: 56px;
   }
 </style>
