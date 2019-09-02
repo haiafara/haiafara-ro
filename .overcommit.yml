@@ -31,3 +31,19 @@
 #
 #  IndexTags:
 #    enabled: true # Generate a tags file with `ctags` each time HEAD changes
+
+PreCommit:
+  ALL:
+    problem_on_unmodified_line: report
+    requires_files: true
+    quiet: false
+  EsLint:
+    enabled: true
+    required_executable: 'eslint'
+    on_warn: fail
+#    flags: ['--ext', '.js,.vue', 'app/javascript/']
+    include:
+      - 'app/javascript/**/*.js'
+      - 'app/javascript/**/*.vue'
+  RuboCop:
+    enabled: true
