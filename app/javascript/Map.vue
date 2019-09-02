@@ -115,7 +115,7 @@ export default {
           container.innerHTML = 'Info'
 
           container.onclick = function () {
-            eventBus.$emit('toggleInfoPanel')
+            eventBus.$emit('infoPanelToggle')
           }
 
           return container

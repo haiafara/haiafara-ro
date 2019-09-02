@@ -2,7 +2,7 @@
   <aside
     id="info-panel"
     class="sliding-panel absolute p-2"
-    :class="{'collapsed': !showInfoPanel}"
+    :class="{'collapsed': !show}"
   >
     <div class="rounded-lg bg-white p-3 h-full">
       <router-view />
@@ -16,17 +16,17 @@ import { eventBus } from 'packs/haiafara'
 export default {
   data() {
     return {
-      showInfoPanel: true
+      show: true
     }
   },
   created() {
-    eventBus.$on('toggleInfoPanel', () => {
-      this.toggleInfoPanel()
+    eventBus.$on('infoPanelToggle', () => {
+      this.toggle()
     })
   },
   methods: {
-    toggleInfoPanel() {
-      this.showInfoPanel = !this.showInfoPanel
+    toggle() {
+      this.show = !this.show
       setTimeout(() => {
         eventBus.$emit('mapInvalidateSize')
       }, 200)
