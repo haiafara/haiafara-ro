@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h2>{{ title }}</h2>
+    <h2 class="text-lg font-semibold">
+      {{ title }}
+    </h2>
     <ul>
       <li
         v-for="(photo, index) in (photos)"
@@ -36,3 +38,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  img {
+    cursor: pointer;
+  }
+</style>
