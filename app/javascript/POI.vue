@@ -1,7 +1,13 @@
 <template>
   <div>
-    <h1>{{ title }}</h1>
-    {{ description }}
+    <h1
+      class="text-2xl font-bold text-gray-700 mb-2"
+    >
+      {{ title }}
+    </h1>
+    <div class="mb-2">
+      {{ description }}
+    </div>
     <haiafara-photo-gallery
       v-if="photos.length"
       :photos="photos"
