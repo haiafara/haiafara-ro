@@ -6,30 +6,23 @@
       v-if="photos.length"
       :photos="photos"
     />
-    <h2>Puncte de interes recomandate</h2>
-    <ul>
-      <li
-        v-for="poi in pois"
-        :key="poi.attributes.name"
-      >
-        <router-link
-          :to="{ name: 'poi', params: { id: poi.id }}"
-        >
-          {{ poi.attributes.name }}
-        </router-link>
-      </li>
-    </ul>
+    <haiafara-poi-list
+      v-if="pois.length"
+      :pois="pois"
+    />
   </div>
 </template>
 
 <script>
   import { eventBus } from 'packs/haiafara'
   import PhotoGallery from './PhotoGallery'
+  import POIList from './POIList'
   import { load_included } from './mixins/load_included'
 
   export default {
     components: {
-      'haiafara-photo-gallery': PhotoGallery
+      'haiafara-photo-gallery': PhotoGallery,
+      'haiafara-poi-list': POIList
     },
     mixins: [ load_included ],
     data() {
