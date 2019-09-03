@@ -8,6 +8,7 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import 'leaflet.fullscreen'
 import 'leaflet.fullscreen/Control.FullScreen.css'
+import 'leaflet-active-area'
 import ResizeSensor from 'css-element-queries/src/ResizeSensor'
 
 export default {
@@ -164,6 +165,14 @@ export default {
           }
         }
       ).addTo(this.map)
+
+      this.map.setActiveArea({
+        position: 'absolute',
+        top: '0px',
+        left: '450px',
+        right: '0px',
+        bottom: '0px'
+      })
     }
   }
 }
