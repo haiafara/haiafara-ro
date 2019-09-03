@@ -37,8 +37,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'capistrano'
-gem 'capistrano-rails'
 gem 'capistrano-passenger'
+gem 'capistrano-rails'
 gem 'capistrano-rvm'
 gem 'capistrano-sidekiq'
 
@@ -47,53 +47,56 @@ gem 'loofah', '>= 2.2.3'
 gem 'rack', '>= 2.0.6'
 
 # monitoring, etc
-gem 'skylight'
 gem 'sentry-raven'
+gem 'skylight'
 
 # my gems
 gem 'administrate'
 gem 'administrate-field-shrine', github: 'haiafara/administrate-field-shrine'
 gem 'aws-sdk-s3'
 gem 'devise'
-gem 'friendly_id', '~> 5.2.0'
 gem 'fast_jsonapi'
+gem 'friendly_id', '~> 5.2.0'
 gem 'image_processing', '~> 1.0'
 gem 'rgeo-geojson'
-gem 'sitemap_generator'
-gem 'sidekiq'
 gem 'shrine'
+gem 'sidekiq', '~> 5.2.7'
+gem 'sitemap_generator'
 
 gem 'underpass'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails', '~> 3.8'
+  # Call 'byebug' anywhere in the code to stop execution
+  # and get a debugger console
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner'
   gem 'factory_bot_rails', '~> 5.0'
   gem 'pry'
+  gem 'rspec-rails', '~> 3.8'
 end
 
 group :development do
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop'
   gem 'rubocop-rails'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # Spring speeds up development by keeping your application running in the
+  # background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Access an interactive console on exception pages
+  # or by calling 'console' anywhere in the code.
+  gem 'web-console', '>= 3.3.0'
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
+  gem 'coveralls', require: false
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   # gem 'chromedriver-helper'
-  gem 'simplecov', require: false
-  gem 'coveralls', require: false
   gem 'shrine-memory'
+  gem 'simplecov', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
