@@ -13,10 +13,12 @@
 
 ## Uses
 
+*   [Tailwind CSS](https://tailwindcss.com/)
 *   [Leaflet](https://leafletjs.com/)
 *   [Leaflet.fullscreen](https://github.com/Leaflet/Leaflet.fullscreen)
+*   [Leaflet-active-area](https://github.com/Mappy/Leaflet-active-area)
 *   [CSS Element Queries](https://github.com/marcj/css-element-queries)
-*   [vue-image-lightbox](https://github.com/pexea12/vue-image-lightbox)  
+*   [vue-image-lightbox](https://github.com/pexea12/vue-image-lightbox)
 
 ## License
 
