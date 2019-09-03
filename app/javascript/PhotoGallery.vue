@@ -1,19 +1,16 @@
 <template>
-  <div>
+  <div class="mb-2">
     <h2 class="text-lg font-semibold">
       {{ title }}
     </h2>
-    <ul>
-      <li
+    <div class="flex flex-wrap justify-between">
+      <img
         v-for="(photo, index) in (photos)"
         :key="photo.src"
+        :src="photo.thumb"
+        @click="openLightBox(index)"
       >
-        <img
-          :src="photo.thumb"
-          @click="openLightBox(index)"
-        >
-      </li>
-    </ul>
+    </div>
   </div>
 </template>
 
@@ -41,6 +38,8 @@ export default {
 
 <style scoped>
   img {
+    width: 32.5%;
+    height: 100%;
     cursor: pointer;
   }
 </style>
