@@ -2,7 +2,10 @@
   <div>
     <h1>{{ title }}</h1>
     {{ description }}
-    <haiafara-photo-gallery :photos="photos" />
+    <haiafara-photo-gallery
+      v-if="photos.length"
+      :photos="photos"
+    />
   </div>
 </template>
 
