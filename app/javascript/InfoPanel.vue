@@ -4,7 +4,7 @@
     class="sliding-panel absolute p-2"
     :class="{'collapsed': !show}"
   >
-    <div class="rounded-lg bg-white p-3 h-full">
+    <div class="rounded-lg bg-white p-3 h-full border border-gray-300">
       <router-view />
     </div>
   </aside>
