@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ZoneSerializer
   include FastJsonapi::ObjectSerializer
   set_id :slug
