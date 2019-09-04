@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class API::ZonesController < ApplicationController
   include ZoneLoader
   def show

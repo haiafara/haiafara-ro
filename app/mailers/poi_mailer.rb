@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class POIMailer < ApplicationMailer
   def no_match_notice(poi)
     @poi = poi
