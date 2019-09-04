@@ -5,20 +5,16 @@ import Vue from 'vue'
 import VueLazyLoad from 'vue-lazyload'
 Vue.use(VueLazyLoad)
 
-import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css'
-Vue.use(Vuetify)
-
-// start the event bus, beep beep
-
 export const eventBus = new Vue()
 
 // import modules
 
-import App from '../App.vue'
-import Home from '../Home.vue'
-import Zone from '../Zone.vue'
-import POI from '../POI.vue'
+import App from 'App.vue'
+import Home from 'Home.vue'
+import Zone from 'Zone.vue'
+import POI from 'POI.vue'
+
+import 'packs/haiafara.css'
 
 // router
 

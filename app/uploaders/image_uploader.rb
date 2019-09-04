@@ -8,6 +8,7 @@ class ImageUploader < Shrine
   plugin :processing
   plugin :versions
   plugin :cached_attachment_data
+  plugin :store_dimensions, analyzer: :mini_magick
 
   plugin :upload_options, store: lambda { |_io, context|
     { acl: context[:version] == :original ? 'private' : 'public-read' }

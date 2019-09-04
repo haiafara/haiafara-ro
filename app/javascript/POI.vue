@@ -1,10 +1,17 @@
 <template>
   <div>
-    <v-container pb-0>
-      <h1>{{ title }}</h1>
+    <h1
+      class="text-2xl font-bold text-gray-700 mb-2"
+    >
+      {{ title }}
+    </h1>
+    <div class="mb-2">
       {{ description }}
-    </v-container>
-    <haiafara-photo-gallery :photos="photos" />
+    </div>
+    <haiafara-photo-gallery
+      v-if="photos.length"
+      :photos="photos"
+    />
   </div>
 </template>
 

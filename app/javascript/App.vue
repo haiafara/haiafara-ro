@@ -1,91 +1,33 @@
 <template>
-  <v-app id="inspire">
+  <div class="h-screen">
     <haiafara-lightbox />
-    <v-navigation-drawer
-      v-model="drawer"
-      fixed
-      clipped
-      app
+    <haiafara-navigation />
+    <div
+      id="content"
+      class="h-full w-fill"
     >
-      <v-list dense>
-        <v-list-tile @click="focusTown">
-          <v-list-tile-action>
-            <v-icon>home</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Tot orașul</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <v-list-tile @click="focusChurch">
-          <v-list-tile-action>
-            <v-icon>contact_mail</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Biserica Romano-Catolică</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-toolbar
-      color="light-blue"
-      clipped-left
-      dense
-      dark
-      app
-    >
-      <v-toolbar-side-icon @click.stop="toggleNavigationDrawer" />
-      <v-btn
-        icon
-        @click="toggleInfoPanel"
-      >
-        <v-icon>info</v-icon>
-      </v-btn>
-      <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
-    </v-toolbar>
-    <v-content>
-      <v-container
-        ma-0
-        pa-0
-        fluid
-        fill-height
-        class="b"
-      >
-        <v-layout
-          row
-          wrap
-        >
-          <v-flex
-            id="map-container"
-            :class="{'map-minheight': $vuetify.breakpoint.xsAndDown, 'collapsed': showInfoPanel && $vuetify.breakpoint.smAndUp }"
-          >
-            <haiafara-map />
-          </v-flex>
-          <aside
-            id="info-panel"
-            :class="{'collapsed': !showInfoPanel, 'sliding-panel': $vuetify.breakpoint.smAndUp}"
-          >
-            <router-view />
-          </aside>
-        </v-layout>
-      </v-container>
-    </v-content>
-  </v-app>
+      <haiafara-info-panel />
+      <haiafara-map />
+    </div>
+  </div>
 </template>
 
 <script>
   import { eventBus } from 'packs/haiafara'
-  import Map from './Map.vue'
   import LightBox from './LightBox'
+  import Navigation from './Navigation'
+  import InfoPanel from './InfoPanel'
+  import Map from './Map.vue'
 
   export default {
     components: {
-      'haiafara-map': Map,
-      'haiafara-lightbox': LightBox
+      'haiafara-lightbox': LightBox,
+      'haiafara-navigation': Navigation,
+      'haiafara-info-panel': InfoPanel,
+      'haiafara-map': Map
     },
     data() {
       return {
-        showInfoPanel: false,
-        drawer: false,
         on_screen: null
       }
     },
@@ -100,63 +42,12 @@
       eventBus.$on('appUpdateOnScreen', (on_screen) => {
         this.on_screen = on_screen
       })
-      eventBus.$on('toggleInfoPanel', () => {
-        this.toggleInfoPanel()
-      })
-    },
-    methods: {
-      toggleNavigationDrawer: function () {
-        this.drawer = !this.drawer;
-        setTimeout(() => {
-          eventBus.$emit('mapInvalidateSize')
-        }, 200)
-      },
-      toggleInfoPanel() {
-        this.showInfoPanel = !this.showInfoPanel
-        setTimeout(() => {
-          eventBus.$emit('mapInvalidateSize')
-        }, 200)
-      },
-      focusTown: function () {
-        eventBus.$emit('mapSetView', [47.6623, 23.6970], 15)
-      },
-      focusChurch: function () {
-        eventBus.$emit('mapSetView', [47.66283, 23.69984], 18)
-      }
     }
   }
 </script>
 
 <style>
-  /* TODO - separate this for mobile */
-  #map-container {
-    width: 100%;
-    transition: padding 0.2s;
-  }
-
-  #map-container.collapsed {
-    padding-left: 450px;
-  }
-
-  #map-container.map-minheight {
-    min-height: 400px;
-  }
-
-  #info-panel {
-  }
-
-  #info-panel.sliding-panel {
-    background: #fff;
-    position: absolute;
-    height: 100%;
-    overflow: auto;
-    border-right: 1px solid #ddd;
-    width: 450px;
-    transition: transform 0.2s;
-    transform: translateX(0px);
-  }
-
-  #info-panel.sliding-panel.collapsed {
-    transform: translateX(-450px);
+  #content {
+    padding-top: 56px;
   }
 </style>
