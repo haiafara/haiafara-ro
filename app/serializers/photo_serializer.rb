@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PhotoSerializer
   include FastJsonapi::ObjectSerializer
   set_id :id

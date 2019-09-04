@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class POI < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
@@ -12,6 +14,6 @@ class POI < ApplicationRecord
   private
 
   def enqueue_update_shape_job
-    POIUpdateShapeJob.perform_later(self.id)
+    POIUpdateShapeJob.perform_later(id)
   end
 end

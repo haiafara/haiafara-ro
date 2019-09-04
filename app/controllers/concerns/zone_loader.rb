@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ZoneLoader
   extend ActiveSupport::Concern
 
@@ -9,7 +11,7 @@ module ZoneLoader
     @zone = Zone.includes(:pois).friendly.find(params[:id])
     @resource_json = ZoneSerializer.new(
       @zone,
-      include: [:pois, :photos]
+      include: %i[pois photos]
     ).serialized_json
   end
 end

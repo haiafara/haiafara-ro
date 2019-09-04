@@ -10,7 +10,7 @@ RSpec.describe Photo, type: :model do
     it 'generates image versions' do
       ActiveJob::Base.queue_adapter =
         Rails.application.config.active_job.queue_adapter
-      expect(photo.reload.image.keys).to eq(%i[original large medium thumbnail])
+      expect(photo.reload.image.keys).to eq(%i[original extralarge large medium thumbnail])
     end
   end
 end

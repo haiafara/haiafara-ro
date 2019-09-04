@@ -1,4 +1,6 @@
-require "administrate/base_dashboard"
+# frozen_string_literal: true
+
+require 'administrate/base_dashboard'
 
 class PhotoDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -18,7 +20,7 @@ class PhotoDashboard < Administrate::BaseDashboard
       version: :medium
     ),
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -26,33 +28,33 @@ class PhotoDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :photoable,
-    :id,
-    :name,
-    :description,
+  COLLECTION_ATTRIBUTES = %i[
+    photoable
+    id
+    name
+    description
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-    :photoable,
-    :id,
-    :name,
-    :description,
-    :image,
-    :created_at,
-    :updated_at,
+  SHOW_PAGE_ATTRIBUTES = %i[
+    photoable
+    id
+    name
+    description
+    image
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :photoable,
-    :name,
-    :description,
-    :image,
+  FORM_ATTRIBUTES = %i[
+    photoable
+    name
+    description
+    image
   ].freeze
 
   # Overwrite this method to customize how photos are displayed

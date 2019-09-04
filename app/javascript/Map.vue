@@ -8,6 +8,7 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import 'leaflet.fullscreen'
 import 'leaflet.fullscreen/Control.FullScreen.css'
+import 'leaflet-active-area'
 import ResizeSensor from 'css-element-queries/src/ResizeSensor'
 
 export default {
@@ -43,7 +44,7 @@ export default {
     })
   },
   mounted () {
-    this.resizeSensor = new ResizeSensor(document.getElementById('map-container'), () => {
+    this.resizeSensor = new ResizeSensor(document.getElementById('map'), () => {
       this.checkFlexStabilized()
     })
   },
@@ -80,7 +81,7 @@ export default {
       this.geoJSONQueue = []
     },
     checkFlexStabilized() {
-      var newHeight = document.getElementById('map-container').clientHeight
+      var newHeight = document.getElementById('map').clientHeight
       if(newHeight != 0 && newHeight == this.flexHeight) {
         this.flexStabilised = true
         this.resizeSensor.detach()
@@ -97,7 +98,14 @@ export default {
       }
     },
     attachMap() {
-      this.map = L.map('map', { fullscreenControl: true, maxZoom: 20, trackResize: true })
+      this.map = L.map('map', {
+        fullscreenControl: true,
+        fullscreenControlOptions: {
+          position: 'topright'
+        },
+        maxZoom: 20,
+        trackResize: true
+      })
 
       var CustomControl = L.Control.extend({
         options: {
@@ -115,7 +123,7 @@ export default {
           container.innerHTML = 'Info'
 
           container.onclick = function () {
-            eventBus.$emit('toggleInfoPanel')
+            eventBus.$emit('infoPanelToggle')
           }
 
           return container
@@ -157,6 +165,14 @@ export default {
           }
         }
       ).addTo(this.map)
+
+      this.map.setActiveArea({
+        position: 'absolute',
+        top: '0px',
+        left: '450px',
+        right: '0px',
+        bottom: '0px'
+      })
     }
   }
 }
@@ -165,7 +181,6 @@ export default {
 <style>
   #map {
     z-index: 0;
-    width: 100%;
     height: 100%;
   }
 </style>

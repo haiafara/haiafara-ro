@@ -1,4 +1,6 @@
-require "administrate/base_dashboard"
+# frozen_string_literal: true
+
+require 'administrate/base_dashboard'
 
 class POIDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -17,7 +19,7 @@ class POIDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     overpass_query: Field::Text,
-    recommended: Field::Boolean,
+    recommended: Field::Boolean
     # photos: Field::HasMany
   }.freeze
 
@@ -26,24 +28,24 @@ class POIDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :id,
-    :name
+  COLLECTION_ATTRIBUTES = %i[
+    id
+    name
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-    :zones,
-    :id,
-    :name,
-    :description,
-    :slug,
-    :overpass_query,
-    :shape,
-    :recommended,
-    :created_at,
-    :updated_at
+  SHOW_PAGE_ATTRIBUTES = %i[
+    zones
+    id
+    name
+    description
+    slug
+    overpass_query
+    shape
+    recommended
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -54,7 +56,7 @@ class POIDashboard < Administrate::BaseDashboard
     :name,
     :description,
     :overpass_query,
-    :recommended,
+    :recommended
     # :photos
   ].freeze
 
