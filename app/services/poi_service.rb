@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module POIService
   class << self
     def update_shape_from_overpass(id)

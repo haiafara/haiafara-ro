@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class POISerializer
   include FastJsonapi::ObjectSerializer
   set_id :slug
