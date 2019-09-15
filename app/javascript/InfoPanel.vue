@@ -4,8 +4,10 @@
     class="sliding-panel absolute p-2"
     :class="{'collapsed': !show}"
   >
-    <div class="text-gray-700 rounded-lg bg-white p-3 h-full shadow border border-gray-300">
-      <router-view />
+    <div class="text-gray-700 rounded-lg bg-white h-full shadow border border-gray-300 p-3">
+      <div class="h-full overflow-auto">
+        <router-view />
+      </div>
     </div>
   </aside>
 </template>
@@ -41,7 +43,6 @@ export default {
   }
 
   #info-panel.sliding-panel {
-    overflow: auto;
     width: 450px;
     transition: transform 0.2s;
     transform: translateX(0px);
