@@ -165,14 +165,15 @@ export default {
           }
         }
       ).addTo(this.map)
-
-      this.map.setActiveArea({
-        position: 'absolute',
-        top: '0px',
-        left: '450px',
-        right: '0px',
-        bottom: '0px'
-      })
+      if(window.matchMedia('(min-width: 768px)').matches) {
+        this.map.setActiveArea({
+          position: 'absolute',
+          top: '0px',
+          left: '450px',
+          right: '0px',
+          bottom: '0px'
+        })
+      }
     }
   }
 }
