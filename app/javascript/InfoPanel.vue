@@ -6,7 +6,12 @@
   >
     <div class="text-gray-700 bg-white h-full p-3 md:rounded-lg md:shadow md:border md:border-gray-300">
       <div class="h-full overflow-auto">
-        <button @click="toggle()" class="md:hidden w-full font-bold mb-2 py-2 px-4 rounded border border-gray-200">Arată harta</button>
+        <button
+          class="md:hidden w-full font-bold mb-2 py-2 px-4 rounded border border-gray-200"
+          @click="toggle()"
+        >
+          Arată harta
+        </button>
         <router-view />
       </div>
     </div>
