@@ -13,7 +13,7 @@
     "file-loader": "^4.2.0",
     "leaflet": "^1.5.1",
     "leaflet-active-area": "^1.1.0",
-    "leaflet.fullscreen": "^1.5.1",
+    "leaflet.fullscreen": "^1.6.0",
     "postcss-cssnext": "^3.1.0",
     "tailwindcss": "^1.1.2",
     "set-value": "^2.0.1",
