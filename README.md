@@ -18,7 +18,6 @@
 *   [Leaflet.fullscreen](https://github.com/Leaflet/Leaflet.fullscreen)
 *   [Leaflet-active-area](https://github.com/Mappy/Leaflet-active-area)
 *   [CSS Element Queries](https://github.com/marcj/css-element-queries)
-*   [vue-image-lightbox](https://github.com/pexea12/vue-image-lightbox)
 
 ## License
 
