@@ -1,3 +1,12 @@
 <div id='app'>
   <h1><%= @zone.name %></h1>
+  <p><%= @zone.description %></p>
+  <% if @zone.pois.recommended %>
+  <p>Puncte de interes recomandate</p>
+  <ul>
+    <% @zone.pois.recommended.each do |poi| %>
+    <li><a href="<%= poi_path(poi) %>"><%= poi.name %></a>
+    <% end %>
+  </ul>
+  <% end %>
 </div>
