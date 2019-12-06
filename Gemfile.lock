@@ -230,7 +230,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     public_suffix (4.0.1)
-    puma (3.12.1)
+    puma (3.12.2)
     rack (2.0.7)
     rack-protection (2.0.7)
       rack
@@ -423,7 +423,7 @@ DEPENDENCIES
   loofah (>= 2.2.3)
   pg (>= 0.18, < 2.0)
   pry
-  puma (~> 3.11)
+  puma (~> 3.12)
   rack (>= 2.0.6)
   rails (~> 5.2.1)
   rgeo-geojson
