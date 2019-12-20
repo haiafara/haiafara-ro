@@ -10,7 +10,7 @@ gem 'rails', '~> 5.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -56,10 +56,10 @@ gem 'administrate-field-shrine', github: 'haiafara/administrate-field-shrine'
 gem 'aws-sdk-s3'
 gem 'devise'
 gem 'fast_jsonapi'
-gem 'friendly_id', '~> 5.2.0'
+gem 'friendly_id', '~> 5.3.0'
 gem 'image_processing', '~> 1.0'
 gem 'rgeo-geojson'
-gem 'shrine'
+gem 'shrine', '~> 2.19'
 gem 'sidekiq', '~> 5.2.7'
 gem 'sitemap_generator'
 
