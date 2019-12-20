@@ -59,7 +59,7 @@ gem 'fast_jsonapi'
 gem 'friendly_id', '~> 5.3.0'
 gem 'image_processing', '~> 1.0'
 gem 'rgeo-geojson'
-gem 'shrine'
+gem 'shrine', '~> 2.19'
 gem 'sidekiq', '~> 5.2.7'
 gem 'sitemap_generator'
 
