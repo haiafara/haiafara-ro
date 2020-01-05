@@ -8,7 +8,7 @@
     "@babel/preset-env": "^7.7.5",
     "@rails/webpacker": "^4.2.2",
     "caniuse-lite": "^1.0.30001018",
-    "css-element-queries": "^1.2.2",
+    "css-element-queries": "^1.2.3",
     "css-loader": "^2.1.1",
     "file-loader": "^4.3.0",
     "leaflet": "^1.6.0",
