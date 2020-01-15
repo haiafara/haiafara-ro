@@ -11,7 +11,19 @@
 
 "Hai afară!" ("Come outside!" in Romanian) is a Ruby on Rails application used to showcase hiking, biking and running trails as well as other types of tourist attractions in a given zone of interest.
 
-## Uses
+## Setup
+
+### Make a user admin
+
+After registering a user, locally run:
+
+    rails users:make_admin[user@email.com]
+    
+Or via Capistrano:
+
+    cap production users:make_admin[user@email.com]
+
+## Uses the following libaries / frameworks
 
 *   [Tailwind CSS](https://tailwindcss.com/)
 *   [Leaflet](https://leafletjs.com/)
