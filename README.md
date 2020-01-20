@@ -17,7 +17,7 @@
 
 Register a user the usual way and then run:
 
-1. Locally
+1. Locally:
 
         rails users:make_admin[user@email.com]
     
