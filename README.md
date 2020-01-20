@@ -15,13 +15,15 @@
 
 ### Convert a user to admin
 
-After registering a user, locally run:
+Register a user the usual way then run:
 
-    rails users:make_admin[user@email.com]
+1. Locally
+
+        rails users:make_admin[user@email.com]
     
-Or via Capistrano:
+2. On your deployed instance via Capistrano:
 
-    cap production users:make_admin[user@email.com]
+        cap production users:make_admin[user@email.com]
 
 ## Uses the following libaries / frameworks
 
