@@ -15,7 +15,7 @@
 
 ### Convert a user to admin
 
-Register a user the usual way then run:
+Register a user the usual way and then run:
 
 1. Locally
 
