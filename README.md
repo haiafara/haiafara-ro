@@ -13,7 +13,7 @@
 
 ## Setup
 
-### Make a user admin
+### Convert a user to admin
 
 After registering a user, locally run:
 
