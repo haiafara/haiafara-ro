@@ -139,7 +139,7 @@ GEM
       term-ansicolor
       thor
     crass (1.0.5)
-    database_cleaner (1.8.1)
+    database_cleaner (1.8.2)
     datetime_picker_rails (0.0.7)
       momentjs-rails (>= 2.8.1)
     devise (4.7.1)
