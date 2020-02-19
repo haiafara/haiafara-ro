@@ -7,7 +7,7 @@
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
     "@rails/webpacker": "^4.2.2",
-    "caniuse-lite": "^1.0.30001025",
+    "caniuse-lite": "^1.0.30001028",
     "css-element-queries": "^1.2.3",
     "css-loader": "^2.1.1",
     "file-loader": "^4.3.0",
