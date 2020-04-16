@@ -14,7 +14,12 @@ jobs:
           command: gem install bundler -v 2.1.4
       - restore_cache:
           key:  bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-      - run: bundle check --path vendor/bundle || bundle install --path vendor/bundle
+      - run:
+          name: bundle install
+          command: |
+            bundle config set path 'vendor/bundle'
+            bundle check
+            bundle install
       - save_cache:
           key:  bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
           paths:
