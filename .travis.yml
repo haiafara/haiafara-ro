@@ -10,8 +10,9 @@ cache:
     - ~/.cache
 before_install:
 - yes | gem update --system --force
-- gem install bundler
+- gem install bundler -v 2.1.4
 install:
+- bundle config path vendor/bundle
 - bundle install
 - nvm install --lts
 - npm i -g yarn
