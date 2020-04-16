@@ -3,6 +3,14 @@
 class PagesController < ApplicationController
   def home
     default_zone = Zone.where(default: true).first
-    redirect_to zone_path(default_zone)
+    if default_zone
+      redirect_to zone_path(default_zone)
+    else
+      redirect_to pages_no_zone_path
+    end
+  end
+
+  def no_zone
+    render plain: 'No zones defined or no default zone is defined'
   end
 end
