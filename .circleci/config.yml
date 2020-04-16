@@ -17,8 +17,6 @@ jobs:
       - run:
           name: bundle install
           command: |
-            bundle config set path 'vendor/bundle'
-            bundle check
             bundle install
       - save_cache:
           key:  bundle-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
