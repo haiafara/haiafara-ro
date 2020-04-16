@@ -361,7 +361,7 @@ GEM
     simplecov (0.18.5)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
-    simplecov-html (0.12.1)
+    simplecov-html (0.12.2)
     sitemap_generator (6.1.0)
       builder (~> 3.0)
     skylight (4.2.3)
@@ -470,7 +470,7 @@ DEPENDENCIES
   webpacker (>= 4.0.x)
 
 RUBY VERSION
-   ruby 2.5.3p105
+   ruby 2.6.5p114
 
 BUNDLED WITH
-   2.0.2
+   2.1.4
