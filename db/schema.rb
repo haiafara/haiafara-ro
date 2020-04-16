@@ -86,10 +86,10 @@ ActiveRecord::Schema.define(version: 2019_06_06_091728) do
     t.bigint "region_id"
     t.string "name"
     t.string "slug"
+    t.geography "bounding_box", limit: {:srid=>4326, :type=>"st_polygon", :geographic=>true}
     t.boolean "default"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.geography "bounding_box", limit: {:srid=>4326, :type=>"st_polygon", :geographic=>true}
     t.text "description"
     t.index ["region_id"], name: "index_zones_on_region_id"
   end
