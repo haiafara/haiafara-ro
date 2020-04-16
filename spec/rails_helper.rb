@@ -1,9 +1,10 @@
+require 'simplecov'
+
 if ENV['CI'] == 'true'
   require 'coveralls'
-  Coveralls.wear!
+  Coveralls.wear!('rails')
 end
 
-require 'simplecov'
 SimpleCov.start 'rails' do
   add_filter 'app/controllers/admin/'
   add_filter 'app/dashboards/'
