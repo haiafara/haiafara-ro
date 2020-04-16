@@ -4,14 +4,11 @@ addons:
   apt:
     packages:
     - postgresql-9.6-postgis-2.4
-cache:
-  bundler: true
-  directories:
-    - ~/.cache
+cache: bundler
 before_install:
-- yes | gem update --system --force
-- gem install bundler
+- gem install bundler -v 2.1.4
 install:
+- bundle config path vendor/bundle
 - bundle install
 - nvm install --lts
 - npm i -g yarn
