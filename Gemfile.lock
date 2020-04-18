@@ -93,7 +93,7 @@ GEM
     bootsnap (1.4.6)
       msgpack (~> 1.0)
     builder (3.2.4)
-    byebug (11.1.1)
+    byebug (11.1.2)
     capistrano (3.13.0)
       airbrussh (>= 1.0.0)
       i18n
