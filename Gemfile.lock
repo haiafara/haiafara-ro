@@ -132,7 +132,7 @@ GEM
     concurrent-ruby (1.1.6)
     connection_pool (2.2.2)
     content_disposition (1.0.0)
-    coveralls_reborn (0.15.0)
+    coveralls_reborn (0.15.1)
       json (~> 2.1)
       simplecov (~> 0.18.1)
       term-ansicolor (~> 1.6)
