@@ -44,7 +44,6 @@ gem 'capistrano-sidekiq'
 
 # recommended security updates
 gem 'loofah', '>= 2.2.3'
-gem 'rack', '>= 2.0.6'
 
 # monitoring, etc
 gem 'sentry-raven'
@@ -60,7 +59,7 @@ gem 'friendly_id', '~> 5.3.0'
 gem 'image_processing', '~> 1.0'
 gem 'rgeo-geojson'
 gem 'shrine', '~> 2.19'
-gem 'sidekiq', '~> 5.2.7'
+gem 'sidekiq'
 gem 'sitemap_generator'
 
 gem 'underpass'

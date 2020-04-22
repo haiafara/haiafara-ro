@@ -231,8 +231,8 @@ GEM
       method_source (~> 1.0)
     public_suffix (4.0.4)
     puma (3.12.4)
-    rack (2.2.2)
-    rack-protection (2.0.7)
+    rack (2.0.9)
+    rack-protection (2.0.8.1)
       rack
     rack-proxy (0.6.5)
       rack
@@ -339,9 +339,9 @@ GEM
     shrine-memory (0.1.0)
       down
       shrine
-    sidekiq (5.2.7)
+    sidekiq (5.2.8)
       connection_pool (~> 2.2, >= 2.2.2)
-      rack (>= 1.5.0)
+      rack (< 2.1.0)
       rack-protection (>= 1.5.0)
       redis (>= 3.3.5, < 5)
     simplecov (0.18.5)
@@ -431,7 +431,6 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   pry
   puma (~> 3.12)
-  rack (>= 2.0.6)
   rails (~> 5.2.1)
   rgeo-geojson
   rspec-rails (~> 3.8)
@@ -443,7 +442,7 @@ DEPENDENCIES
   sentry-raven
   shrine (~> 2.19)
   shrine-memory
-  sidekiq (~> 5.2.7)
+  sidekiq
   simplecov
   sitemap_generator
   skylight
