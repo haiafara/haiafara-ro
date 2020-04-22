@@ -72,7 +72,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails', '~> 5.0'
   gem 'pry'
-  gem 'rspec-rails', '~> 3.8'
+  gem 'rspec-rails', '~> 4.0'
   gem 'rubocop'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
