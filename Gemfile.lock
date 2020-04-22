@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/haiafara/administrate-field-shrine.git
-  revision: 8fc1e4e8238ae6cbe8033cd35d0d39d6c5d19f5e
+  revision: 23161f41b95ad7e1663c687432d4278fc33e4ef6
   specs:
-    administrate-field-shrine (0.0.4)
-      administrate (~> 0.11.0, > 0.5.0)
+    administrate-field-shrine (0.0.5)
+      administrate (> 0.5.0)
       rails (>= 4.2)
 
 GEM
@@ -55,16 +55,16 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    administrate (0.11.0)
-      actionpack (>= 4.2, < 6.0)
-      actionview (>= 4.2, < 6.0)
-      activerecord (>= 4.2, < 6.0)
+    administrate (0.13.0)
+      actionpack (>= 4.2)
+      actionview (>= 4.2)
+      activerecord (>= 4.2)
       autoprefixer-rails (>= 6.0)
       datetime_picker_rails (~> 0.0.7)
       jquery-rails (>= 4.0)
       kaminari (>= 1.0)
       momentjs-rails (~> 2.8)
-      sass-rails (~> 5.0)
+      sassc-rails (~> 2.1)
       selectize-rails (~> 0.6)
     airbrussh (1.4.0)
       sshkit (>= 1.6.1, != 1.7.0)
@@ -231,8 +231,8 @@ GEM
       method_source (~> 1.0)
     public_suffix (4.0.4)
     puma (3.12.4)
-    rack (2.2.2)
-    rack-protection (2.0.7)
+    rack (2.0.9)
+    rack-protection (2.0.8.1)
       rack
     rack-proxy (0.6.5)
       rack
@@ -326,6 +326,14 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sassc (2.3.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selectize-rails (0.12.6)
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
@@ -337,10 +345,10 @@ GEM
       content_disposition (~> 1.0)
       down (>= 4.1, < 6)
     shrine-memory (0.3.1)
-      shrine (~> 2.2)
-    sidekiq (5.2.7)
+      shrine
+    sidekiq (5.2.8)
       connection_pool (~> 2.2, >= 2.2.2)
-      rack (>= 1.5.0)
+      rack (< 2.1.0)
       rack-protection (>= 1.5.0)
       redis (>= 3.3.5, < 5)
     simplecov (0.18.5)
@@ -430,7 +438,6 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   pry
   puma (~> 3.12)
-  rack (>= 2.0.6)
   rails (~> 5.2.1)
   rgeo-geojson
   rspec-rails (~> 4.0)
@@ -442,7 +449,7 @@ DEPENDENCIES
   sentry-raven
   shrine (~> 2.19)
   shrine-memory
-  sidekiq (~> 5.2.7)
+  sidekiq
   simplecov
   sitemap_generator
   skylight
