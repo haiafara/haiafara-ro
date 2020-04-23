@@ -11,7 +11,7 @@ RSpec.describe POIsController, type: :request do
     end
 
     it 'responds with the correct content type' do
-      expect(response.content_type).to eq('text/html')
+      expect(response.media_type).to eq('text/html')
     end
   end
 end
