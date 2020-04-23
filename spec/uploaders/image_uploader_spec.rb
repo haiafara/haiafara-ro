@@ -9,7 +9,7 @@ RSpec.describe ImageUploader do
     let(:store_lambda) { subject.opts[:upload_options][:store] }
 
     context 'for original version' do
-      let(:acl) { store_lambda.call(double, version: :original)[:acl] }
+      let(:acl) { store_lambda.call(double, derivative: nil)[:acl] }
 
       it 'returns private acl' do
         expect(acl).to eq('private')
@@ -17,7 +17,7 @@ RSpec.describe ImageUploader do
     end
 
     context 'for other versions' do
-      let(:acl) { store_lambda.call(double, version: :other)[:acl] }
+      let(:acl) { store_lambda.call(double, derivative: :other)[:acl] }
 
       it 'returns public-read acl' do
         expect(acl).to eq('public-read')

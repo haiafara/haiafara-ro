@@ -55,9 +55,9 @@ gem 'aws-sdk-s3'
 gem 'devise'
 gem 'fast_jsonapi'
 gem 'friendly_id', '~> 5.3.0'
-gem 'image_processing', '~> 1.0'
+gem 'image_processing', '~> 1.8'
 gem 'rgeo-geojson'
-gem 'shrine', '~> 2.19'
+gem 'shrine', '~> 3.2'
 gem 'sidekiq'
 gem 'sitemap_generator'
 
@@ -69,6 +69,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner'
   gem 'factory_bot_rails', '~> 5.0'
+  gem 'faker'
   gem 'pry'
   gem 'rspec-rails', '~> 4.0'
   gem 'rubocop'
@@ -94,7 +95,6 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   # gem 'chromedriver-helper'
-  # gem 'shrine-memory'
   gem 'simplecov', require: false
 end
 
