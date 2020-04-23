@@ -5,9 +5,9 @@ class PhotoSerializer
   set_id :id
   attributes :name, :description
   attribute :thumbnail do |object|
-    object.image[:thumbnail].url
+    object.image_url(:thumbnail)
   end
   attribute :large do |object|
-    object.image[:large].url
+    object.image_url(:large)
   end
 end
