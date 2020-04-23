@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# used by shrine's backgrounding plugin
 class DestroyJob
   include Sidekiq::Worker
 

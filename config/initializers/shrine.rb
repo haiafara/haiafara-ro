@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'shrine'
 
 if Rails.env.test?
@@ -28,7 +30,13 @@ Shrine.plugin :activerecord
 Shrine.plugin :backgrounding
 
 Shrine::Attacher.promote_block do
-  PromoteJob.perform_async(self.class.name, record.class.name, record.id, name, file_data)
+  PromoteJob.perform_async(
+    self.class.name,
+    record.class.name,
+    record.id,
+    name,
+    file_data
+  )
 end
 
 Shrine::Attacher.destroy_block do

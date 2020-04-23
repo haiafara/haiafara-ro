@@ -9,17 +9,17 @@ class ImageUploader < Shrine
   plugin :store_dimensions, analyzer: :mini_magick
   plugin :derivatives
 
-  plugin :upload_options, store: lambda { |io, derivative: nil, **|
+  plugin :upload_options, store: lambda { |_io, derivative: nil, **|
     { acl: derivative.nil? ? 'private' : 'public-read' }
   }
 
   Attacher.derivatives do |original|
     magick = ImageProcessing::MiniMagick.source(original)
     {
-      extralarge:  magick.resize_to_limit!(1920, 1920),
-      large:       magick.resize_to_limit!(1200, 1200),
-      medium:      magick.resize_to_limit!(600, 600),
-      thumbnail:   magick.resize_to_fill!(150, 150)
+      extralarge: magick.resize_to_limit!(1920, 1920),
+      large: magick.resize_to_limit!(1200, 1200),
+      medium: magick.resize_to_limit!(600, 600),
+      thumbnail: magick.resize_to_fill!(150, 150)
     }
   end
 end
