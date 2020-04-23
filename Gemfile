@@ -40,7 +40,6 @@ gem 'capistrano'
 gem 'capistrano-passenger'
 gem 'capistrano-rails'
 gem 'capistrano-rvm'
-gem 'capistrano-sidekiq'
 
 # recommended security updates
 gem 'loofah', '>= 2.2.3'
