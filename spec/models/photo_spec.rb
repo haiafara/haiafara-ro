@@ -12,7 +12,9 @@ RSpec.describe Photo, type: :model do
     it 'generates image derivatives' do
       ActiveJob::Base.queue_adapter =
         Rails.application.config.active_job.queue_adapter
-      expect(photo.reload.image_derivatives.keys).to eq(%i[extralarge large medium thumbnail])
+      expect(photo.reload.image_derivatives.keys).to eq(
+        %i[extralarge large medium thumbnail]
+      )
     end
   end
 end
