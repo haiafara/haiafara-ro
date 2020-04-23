@@ -11,7 +11,7 @@ RSpec.describe API::POIsController, type: :request do
     end
 
     it 'responds with the correct content type' do
-      expect(response.content_type).to eq('application/json')
+      expect(response.media_type).to eq('application/json')
     end
   end
 end
