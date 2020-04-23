@@ -239,7 +239,8 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (4.0.4)
-    puma (3.12.4)
+    puma (4.3.3)
+      nio4r (~> 2.0)
     rack (2.2.2)
     rack-protection (2.0.8.1)
       rack
@@ -438,7 +439,7 @@ DEPENDENCIES
   loofah (>= 2.2.3)
   pg (>= 0.18, < 2.0)
   pry
-  puma (~> 3.12)
+  puma (~> 4.3)
   rails (~> 6.0.2)
   rgeo-geojson
   rspec-rails (~> 4.0)
