@@ -4699,6 +4699,14 @@ jest-worker@^25.1.0:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
 
+jest-worker@^25.1.0:
+  version "25.4.0"
+  resolved "https://registry.yarnpkg.com/jest-worker/-/jest-worker-25.4.0.tgz#ee0e2ceee5a36ecddf5172d6d7e0ab00df157384"
+  integrity sha512-ghAs/1FtfYpMmYQ0AHqxV62XPvKdUDIBBApMZfly+E9JEmYh2K45G0R5dWxx986RN12pRCxsViwQVtGl+N4whw==
+  dependencies:
+    merge-stream "^2.0.0"
+    supports-color "^7.0.0"
+
 js-base64@^2.1.8:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.5.1.tgz#1efa39ef2c5f7980bb1784ade4a8af2de3291121"
@@ -8475,6 +8483,21 @@ terser-webpack-plugin@^2.3.5:
     terser "^4.4.3"
     webpack-sources "^1.4.3"
 
+terser-webpack-plugin@^2.3.2:
+  version "2.3.5"
+  resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-2.3.5.tgz#5ad971acce5c517440ba873ea4f09687de2f4a81"
+  integrity sha512-WlWksUoq+E4+JlJ+h+U+QUzXpcsMSSNXkDy9lBVkSqDn1w23Gg29L/ary9GeJVYCGiNJJX7LnVc4bwL1N3/g1w==
+  dependencies:
+    cacache "^13.0.1"
+    find-cache-dir "^3.2.0"
+    jest-worker "^25.1.0"
+    p-limit "^2.2.2"
+    schema-utils "^2.6.4"
+    serialize-javascript "^2.1.2"
+    source-map "^0.6.1"
+    terser "^4.4.3"
+    webpack-sources "^1.4.3"
+
 terser@^4.1.2, terser@^4.4.3:
   version "4.4.3"
   resolved "https://registry.yarnpkg.com/terser/-/terser-4.4.3.tgz#401abc52b88869cf904412503b1eb7da093ae2f0"
@@ -8865,14 +8888,15 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
 
-vue-image-lightbox@^6.4.0:
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/vue-image-lightbox/-/vue-image-lightbox-6.4.0.tgz#7acdb79d7917aa66008b0867e9ce761765ec4dac"
-  integrity sha512-N8pBmhTR/Jj361eJfYek2bpSzN2rHbxS6APf4zVcSdRuR0hDLTkFV5EjmdCQlX0KwZjRicgNQVAFle9RifIeIg==
+vue-image-lightbox@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/vue-image-lightbox/-/vue-image-lightbox-7.0.0.tgz#613dbe7a3a763a55ebb1014ef1f7eb8d05b84f04"
+  integrity sha512-s5ZQiL0yilHTnIN/n/+R8s44PbNPgCa/C0M/H0kETyaArPfHMmkwTPKzNwwvbO1Ugjk812GqWb9rZmSzbmreMQ==
   dependencies:
     "@babel/runtime" "^7.5.5"
     babel-loader "^8.0.6"
     hammerjs "^2.0.8"
+    terser-webpack-plugin "^2.3.2"
     vue-lazyload "^1.3.2"
 
 vue-lazyload@^1.3.2, vue-lazyload@^1.3.3:
