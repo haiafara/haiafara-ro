@@ -4,7 +4,7 @@
       ref="lightbox"
       :show-caption="true"
       :show-light-box="false"
-      :images="images"
+      :media="images"
     />
   </div>
 </template>
