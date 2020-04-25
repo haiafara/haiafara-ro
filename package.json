@@ -9,7 +9,7 @@
     "@rails/webpacker": "^5.1.1",
     "caniuse-lite": "^1.0.30001046",
     "css-element-queries": "^1.2.3",
-    "css-loader": "^2.1.1",
+    "css-loader": "^3.5.3",
     "file-loader": "^4.3.0",
     "kind-of": "^6.0.3",
     "leaflet": "^1.6.0",
