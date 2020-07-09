@@ -759,7 +759,7 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+"@babel/runtime@7.9.2", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
   version "7.9.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.2.tgz#d90df0583a3a252f09aaa619665367bae518db06"
   integrity sha512-NE2DtOdufG7R5vnfQUTehdTfNycfUANEtCa9PssN9O/xmTzP4E08UI797ixaei6hBEVL9BI/PsdJS5x7mWoB9Q==
@@ -1403,7 +1403,7 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.9.0.tgz#24390e6ad61386b0a747265754d2a17219de862c"
   integrity sha512-Uvq6hVe90D0B2WEnUqtdgY1bATGz3mw33nH9Y+dmA+w5DHvUmBgkr5rM/KCHpCsiFNRUfokW/szpPPgMK2hm4A==
 
-babel-loader@^8.0.6, babel-loader@^8.1.0:
+babel-loader@^8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.1.0.tgz#c611d5112bd5209abe8b9fa84c3e4da25275f1c3"
   integrity sha512-7q7nC1tYOrqvUrN3LQK4GwSk/TQorZSOlO9C+RZDZpODgyN4ZlCqE5q9cDsyWOliN+aU9B4JX01xK9eJXowJLw==
@@ -8027,7 +8027,7 @@ terser-webpack-plugin@^1.4.3:
     webpack-sources "^1.4.0"
     worker-farm "^1.7.0"
 
-terser-webpack-plugin@^2.3.2, terser-webpack-plugin@^2.3.5:
+terser-webpack-plugin@^2.3.5:
   version "2.3.5"
   resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-2.3.5.tgz#5ad971acce5c517440ba873ea4f09687de2f4a81"
   integrity sha512-WlWksUoq+E4+JlJ+h+U+QUzXpcsMSSNXkDy9lBVkSqDn1w23Gg29L/ary9GeJVYCGiNJJX7LnVc4bwL1N3/g1w==
@@ -8437,15 +8437,13 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
 
-vue-image-lightbox@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/vue-image-lightbox/-/vue-image-lightbox-7.0.0.tgz#613dbe7a3a763a55ebb1014ef1f7eb8d05b84f04"
-  integrity sha512-s5ZQiL0yilHTnIN/n/+R8s44PbNPgCa/C0M/H0kETyaArPfHMmkwTPKzNwwvbO1Ugjk812GqWb9rZmSzbmreMQ==
+vue-image-lightbox@^7.1.3:
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/vue-image-lightbox/-/vue-image-lightbox-7.1.3.tgz#2a6b96299a2d3d1488b6818070b252d3c3231a79"
+  integrity sha512-5h+SiE0GLIBLsrC9spl0VZFbz1yFvj1ee1tfaHc4sfE3XCo3vKi6OSFI0r4MKhbhnfFIFiwE1l+vgkH35jlGgQ==
   dependencies:
-    "@babel/runtime" "^7.5.5"
-    babel-loader "^8.0.6"
+    "@babel/runtime" "7.9.2"
     hammerjs "^2.0.8"
-    terser-webpack-plugin "^2.3.2"
     vue-lazyload "^1.3.2"
 
 vue-lazyload@^1.3.2, vue-lazyload@^1.3.3:
