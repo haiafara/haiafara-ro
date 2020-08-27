@@ -20,7 +20,7 @@ Register a user the usual way and then run:
 1. Locally:
 
         rails users:make_admin[user@email.com]
-    
+
 2. On your deployed instance via Capistrano:
 
         cap production users:make_admin[user@email.com]
@@ -32,7 +32,7 @@ Register a user the usual way and then run:
 *   [Leaflet.fullscreen](https://github.com/Leaflet/Leaflet.fullscreen)
 *   [Leaflet-active-area](https://github.com/Mappy/Leaflet-active-area)
 *   [CSS Element Queries](https://github.com/marcj/css-element-queries)
-*   [vue-image-lightbox](https://github.com/pexea12/vue-image-lightbox)
+*   [vue-it-bigger](https://github.com/haiafara/vue-it-bigger)
 
 ## License
 
