@@ -2,9 +2,9 @@
   <div id="lightbox">
     <LightBox
       ref="lightbox"
+      :media="images"
       :show-caption="true"
       :show-light-box="false"
-      :media="images"
     />
   </div>
 </template>
@@ -20,7 +20,7 @@
     },
     data() {
       return {
-        images: []
+        images: ['']
       }
     },
     created () {
