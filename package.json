@@ -18,7 +18,7 @@
     "postcss-cssnext": "^3.1.0",
     "set-value": "^3.0.2",
     "style-loader": "^1.2.1",
-    "tailwindcss": "^1.7.3",
+    "tailwindcss": "^1.7.5",
     "typescript": "^3.9.7",
     "vue": "^2.6.12",
     "vue-it-bigger": "^0.0.2",
