@@ -39,7 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'capistrano'
 gem 'capistrano-passenger'
 gem 'capistrano-rails'
-gem 'capistrano-rvm'
+gem 'capistrano-rbenv'
 
 # recommended security updates
 gem 'loofah', '>= 2.2.3'
