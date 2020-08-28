@@ -9,7 +9,7 @@ describe ZonesController, type: :request do
     before { get zone_path(zone) }
 
     it 'responds with 200' do
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(:ok)
     end
 
     it 'responds with the correct content type' do

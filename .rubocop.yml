@@ -21,6 +21,15 @@ AllCops:
 Metrics/BlockLength:
   ExcludedMethods: ['describe', 'context']
 
+Style/BlockComments:
+  Exclude:
+    - 'spec/spec_helper.rb'
+
+RSpec/FilePath:
+  Exclude:
+    - 'spec/requests/pois_controller_spec.rb'
+    - 'spec/requests/api/pois_controller_spec.rb'
+
 # Metrics/BlockLength:
 #   Enabled: true
 #   Exclude:

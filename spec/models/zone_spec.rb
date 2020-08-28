@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe Zone, type: :model do
@@ -16,16 +18,18 @@ describe Zone, type: :model do
     let(:zone) { create(:zone) }
 
     describe '.with_expanded_bounding_box' do
-      instance { described_class.with_expanded_bounding_box.find(zone.id) }
+      subject(:zone_with_expanded_bounding_box) do
+        described_class.with_expanded_bounding_box.find(zone.id)
+      end
 
       it 'defines an .expanded_bounding_box property' do
-        expect(described_class.expanded_bounding_box).not_to be_nil
+        expect(zone_with_expanded_bounding_box.expanded_bounding_box).not_to be_nil
       end
 
       it 'returns the correct expanded bounding box' do
-        expect(instance.expanded_bounding_box.as_text).to eq(
-          'POLYGON ((23.557 47.602, 23.557 47.722, ' +
-          '23.837000000000003 47.722, 23.837000000000003 47.602, ' +
+        expect(zone_with_expanded_bounding_box.expanded_bounding_box.as_text).to eq(
+          'POLYGON ((23.557 47.602, 23.557 47.722, ' \
+          '23.837000000000003 47.722, 23.837000000000003 47.602, ' \
           '23.557 47.602))'
         )
       end
