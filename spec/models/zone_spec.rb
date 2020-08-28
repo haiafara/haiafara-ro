@@ -16,6 +16,11 @@ describe Zone, type: :model do
 
   describe 'scopes' do
     let(:zone) { create(:zone) }
+    let(:expanded_bounding_box_text) do
+      'POLYGON ((23.557 47.602, 23.557 47.722, ' \
+      '23.837000000000003 47.722, 23.837000000000003 47.602, ' \
+      '23.557 47.602))'
+    end
 
     describe '.with_expanded_bounding_box' do
       subject(:zone_with_expanded_bounding_box) do
@@ -23,14 +28,16 @@ describe Zone, type: :model do
       end
 
       it 'defines an .expanded_bounding_box property' do
-        expect(zone_with_expanded_bounding_box.expanded_bounding_box).not_to be_nil
+        expect(
+          zone_with_expanded_bounding_box.expanded_bounding_box
+        ).not_to be_nil
       end
 
       it 'returns the correct expanded bounding box' do
-        expect(zone_with_expanded_bounding_box.expanded_bounding_box.as_text).to eq(
-          'POLYGON ((23.557 47.602, 23.557 47.722, ' \
-          '23.837000000000003 47.722, 23.837000000000003 47.602, ' \
-          '23.557 47.602))'
+        expect(
+          zone_with_expanded_bounding_box.expanded_bounding_box.as_text
+        ).to eq(
+          expanded_bounding_box_text
         )
       end
     end
