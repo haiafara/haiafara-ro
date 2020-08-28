@@ -14,6 +14,7 @@ install:
 - npm i -g yarn
 - yarn
 script:
+- bundle exec rubocop
 - bundle exec rails db:setup
 - bundle exec rails webpacker:compile
 - bundle exec rspec

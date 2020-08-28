@@ -15,8 +15,8 @@ require:
 
 AllCops:
   NewCops: disable
-  Exclude:
-    - 'node_modules/**/*'
+  Include:
+    - 'spec/**/*.rb'
 
 Metrics/BlockLength:
   ExcludedMethods: ['describe', 'context']
