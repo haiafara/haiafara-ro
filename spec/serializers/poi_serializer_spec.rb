@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe POISerializer do
-  let(:poi) { build(:poi, :point) }
-
+describe POISerializer do
   subject { JSON.parse(described_class.new(poi).serialized_json) }
+
+  let(:poi) { build(:poi, :point) }
 
   describe 'data' do
     let(:data) { subject['data'] }

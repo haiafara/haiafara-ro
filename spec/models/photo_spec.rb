@@ -3,7 +3,7 @@
 require 'rails_helper'
 require 'sidekiq/testing'
 
-RSpec.describe Photo, type: :model do
+describe Photo, type: :model do
   Sidekiq::Testing.inline!
 
   context 'with image' do

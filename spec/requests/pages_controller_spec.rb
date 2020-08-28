@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe PagesController, type: :request do
+describe PagesController, type: :request do
   describe 'GET /' do
     subject(:root_path_request) { get root_path }
 

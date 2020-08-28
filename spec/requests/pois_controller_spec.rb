@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe POIsController, type: :request do
+describe POIsController, type: :request do
   let(:poi) { create(:poi, :point) }
 
   describe 'GET /poi/:slug' do

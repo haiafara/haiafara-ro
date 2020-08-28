@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe API::POIsController, type: :request do
+describe API::POIsController, type: :request do
   let(:poi) { create(:poi, :point) }
 
   describe 'GET /api/poi/:slug' do

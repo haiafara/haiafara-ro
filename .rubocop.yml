@@ -18,6 +18,9 @@ AllCops:
   Exclude:
     - 'node_modules/**/*'
 
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
+
 # Metrics/BlockLength:
 #   Enabled: true
 #   Exclude:

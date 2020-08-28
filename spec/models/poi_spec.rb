@@ -1,21 +1,19 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe POI, type: :model do
-  subject { described_class.new }
+describe POI, type: :model do
+  subject(:instance) { described_class.new }
 
   it 'is valid with valid attributes' do
-    expect(subject).to be_valid
+    expect(instance).to be_valid
   end
 
-  it 'triggers update_shape on save' do
-    expect(subject).to receive(:enqueue_update_shape_job)
-    subject.save
-  end
-
-  describe '#enqueue_update_shape_job' do
-    it 'calls POIUpdateShapeJob' do
-      expect(POIUpdateShapeJob).to receive(:perform_later)
-      subject.send(:enqueue_update_shape_job)
+  describe '#save' do
+    it 'calls POIUpdateShapeJob.perform_later via the after_save callback' do
+      allow(POIUpdateShapeJob).to receive(:perform_later)
+      instance.save
+      expect(POIUpdateShapeJob).to have_received(:perform_later).with(instance.reload.id)
     end
   end
 end
