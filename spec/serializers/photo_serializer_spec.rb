@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe PhotoSerializer do
+describe PhotoSerializer do
   subject { JSON.parse(described_class.new(photo).serialized_json) }
 
   let(:thumbnail_image_url) { Faker::Internet.url }

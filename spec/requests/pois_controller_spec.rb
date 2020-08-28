@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe POIsController, type: :request do
+describe POIsController, type: :request do
   let(:poi) { create(:poi, :point) }
 
   describe 'GET /poi/:slug' do
-    before(:each) { get poi_path(poi) }
+    before { get poi_path(poi) }
 
     it 'responds with 200' do
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(:ok)
     end
 
     it 'responds with the correct content type' do
