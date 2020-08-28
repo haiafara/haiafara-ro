@@ -1,15 +1,19 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe ZonesController, type: :request do
+describe ZonesController, type: :request do
   let(:zone) { create(:zone) }
+
   describe 'GET /zone/:slug' do
-    before(:each) { get zone_path(zone) }
+    before { get zone_path(zone) }
+
     it 'responds with 200' do
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(:ok)
     end
 
     it 'responds with the correct content type' do
-      expect(response.content_type).to eq('text/html')
+      expect(response.media_type).to eq('text/html')
     end
   end
 end

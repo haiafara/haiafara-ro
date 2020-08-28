@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.11.0"
+lock "~> 3.14.1"
 
 set :application, "haiafara"
 set :repo_url, "git@github.com:haiafara/haiafara-ro.git"
@@ -39,5 +39,6 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/syst
 # set :ssh_options, verify_host_key: :secure
 
 set :passenger_restart_with_touch, true
-set :rvm_type, :user
-set :rvm_ruby_version, '2.5.3'
+
+set :rbenv_type, :user
+set :rbenv_ruby, '2.6.6'

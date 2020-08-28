@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe ZoneSerializer do
-  let(:zone) { build(:zone) }
-
+describe ZoneSerializer do
   subject { JSON.parse(described_class.new(zone).serialized_json) }
+
+  let(:zone) { build(:zone) }
 
   describe 'data' do
     let(:data) { subject['data'] }

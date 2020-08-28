@@ -17,7 +17,7 @@ class PhotoDashboard < Administrate::BaseDashboard
     name: Field::String,
     description: Field::Text,
     image: Field::Shrine.with_options(
-      version: :medium
+      derivative: :medium
     ),
     created_at: Field::DateTime,
     updated_at: Field::DateTime

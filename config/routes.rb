@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :pois, only: [:show], path: 'pdi'
 
   get 'pages/home'
+  get 'pages/no_zone'
   root 'pages#home'
 
   # devise

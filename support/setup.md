@@ -37,3 +37,10 @@ Ubuntu
 MacOS
 
     brew install postgis
+    
+## Credentials file
+
+1. If you want to use the credentials stored in the existing `config/credentials.yml.enc`, retrieve the master key from your password manager, create `config/master.key` and paste the key into it.
+2. If you want to create a new credentials file, delete `config/credentials.yml.enc` and run `EDITOR=vim rails credentials:edit`, then use [config/credentials.yml.template](https://github.com/haiafara/haiafara-ro/blob/development/config/credentials.yml.template) as a template. Store the master key in your favorite password manager app.
+
+
