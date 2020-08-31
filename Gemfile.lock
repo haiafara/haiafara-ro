@@ -343,7 +343,7 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (2.3.0)
-    sentry-raven (3.0.2)
+    sentry-raven (3.0.4)
       faraday (>= 1.0)
     shrine (3.2.2)
       content_disposition (~> 1.0)
