@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_06_091728) do
+ActiveRecord::Schema.define(version: 2020_09_02_191851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,23 @@ ActiveRecord::Schema.define(version: 2019_06_06_091728) do
     t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tracks", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "slug"
+    t.boolean "recommended", default: false
+    t.geography "shape", limit: {:srid=>4326, :type=>"line_string", :geographic=>true}
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tracks_zones", id: false, force: :cascade do |t|
+    t.bigint "track_id", null: false
+    t.bigint "zone_id", null: false
+    t.index ["track_id"], name: "index_tracks_zones_on_track_id"
+    t.index ["zone_id"], name: "index_tracks_zones_on_zone_id"
   end
 
   create_table "users", force: :cascade do |t|

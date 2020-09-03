@@ -180,6 +180,9 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gpx (1.0.0)
+      nokogiri (~> 1.7)
+      rake
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     image_processing (1.11.0)
@@ -433,6 +436,7 @@ DEPENDENCIES
   faker
   fast_jsonapi
   friendly_id (~> 5.3.0)
+  gpx
   image_processing (~> 1.8)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, <= 3.2.1)

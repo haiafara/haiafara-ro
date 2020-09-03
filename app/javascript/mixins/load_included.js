@@ -8,6 +8,7 @@ export const load_included = {
     filterIncluded(relationships) {
       var relationship_ids = relationships.data.map(obj => obj.id)
       return this.included.filter(obj => {
+        // todo: add type checking here
         return relationship_ids.includes(obj.id)
       })
     },
@@ -21,6 +22,12 @@ export const load_included = {
           name: poi.attributes.name,
           geometry: poi.attributes.shape
         })
+      })
+    },
+    loadIncludedTracks() {
+      var tracks = this.filterIncluded(this.relationships.tracks)
+      tracks.forEach(track => {
+        this.tracks.push(track)
       })
     },
     loadIncludedPhotos() {

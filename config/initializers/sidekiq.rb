@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 redis_database = ENV['REDIS_DATABASE'].present? ? ENV['REDIS_DATABASE'].to_s : '2'
 
 Sidekiq.configure_server do |config|
