@@ -30,7 +30,7 @@ Shrine.plugin :activerecord
 Shrine.plugin :backgrounding
 
 Shrine::Attacher.promote_block do
-  PromoteJob.perform_async(
+  PromoteJob.perform_later(
     self.class.name,
     record.class.name,
     record.id,
@@ -40,5 +40,5 @@ Shrine::Attacher.promote_block do
 end
 
 Shrine::Attacher.destroy_block do
-  DestroyJob.perform_async(self.class.name, data)
+  DestroyJob.perform_later(self.class.name, data)
 end
