@@ -68,7 +68,7 @@ group :development, :test do
   # and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner'
-  gem 'factory_bot_rails', '~> 5.0'
+  gem 'factory_bot_rails', '~> 6.1'
   gem 'faker'
   gem 'pry'
   gem 'rspec-rails', '~> 4.0'
