@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-# used by shrine's backgrounding plugin
-class PromoteJob
-  include Sidekiq::Worker
-
+# used by Shrine's backgrounding plugin
+class PromoteJob < ApplicationJob
   def perform(attacher_class, record_class, record_id, name, file_data)
     attacher_class = Object.const_get(attacher_class)
     record         = Object.const_get(record_class).find(record_id)

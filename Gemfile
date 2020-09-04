@@ -54,7 +54,7 @@ gem 'administrate-field-shrine', github: 'haiafara/administrate-field-shrine'
 gem 'aws-sdk-s3'
 gem 'devise'
 gem 'fast_jsonapi'
-gem 'friendly_id', '~> 5.3.0'
+gem 'friendly_id', '~> 5.4.0'
 gem 'gpx'
 gem 'image_processing', '~> 1.8'
 gem 'rgeo-geojson'
@@ -69,7 +69,7 @@ group :development, :test do
   # and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner'
-  gem 'factory_bot_rails', '~> 5.0'
+  gem 'factory_bot_rails', '~> 6.1'
   gem 'faker'
   gem 'pry'
   gem 'rspec-rails', '~> 4.0'
@@ -92,7 +92,7 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
-  gem 'coveralls_reborn', '~> 0.15.0', require: false
+  gem 'coveralls_reborn', '~> 0.17.0', require: false
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   # gem 'chromedriver-helper'
