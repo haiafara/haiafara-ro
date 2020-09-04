@@ -798,7 +798,7 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/runtime@^7.10.3", "@babel/runtime@^7.11.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.11.1", "@babel/runtime@^7.11.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
   version "7.11.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.11.2.tgz#f549c13c754cc40b87644b9fa9f09a6a95fe0736"
   integrity sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
@@ -7740,7 +7740,7 @@ terser-webpack-plugin@^1.4.3:
     webpack-sources "^1.4.0"
     worker-farm "^1.7.0"
 
-terser-webpack-plugin@^3.0.6:
+terser-webpack-plugin@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-3.1.0.tgz#91e6d39571460ed240c0cf69d295bcf30ebf98cb"
   integrity sha512-cjdZte66fYkZ65rQ2oJfrdCAkkhJA7YLYk5eGOcGCSGlq0ieZupRdjedSQXYknMPo2IveQL+tPdrxUkERENCFA==
@@ -8163,15 +8163,15 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
 
-vue-it-bigger@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/vue-it-bigger/-/vue-it-bigger-0.0.2.tgz#1285c19426241657c7eb7fedc4a73d0602b2dc0c"
-  integrity sha512-/sUdLEAh5S2LNHtjbGSgTch5h6ZYFMxKPG0HsYMEveDamvBIA+dpm9STx6sG61oA601HMwYz1WLCJM4tYAcv6w==
+vue-it-bigger@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/vue-it-bigger/-/vue-it-bigger-0.0.3.tgz#f3d4272dd94cdd34d0dfc0957785f5d532a950fa"
+  integrity sha512-bIdtrRSTCsRL6QBOR56jrAD5o2ZVK3HWBZs62eA/wS5AIej9PRrZssp0p/+IBo7D4LnnOf6Ggw7IUhgRsJslcg==
   dependencies:
-    "@babel/runtime" "^7.10.3"
+    "@babel/runtime" "^7.11.1"
     babel-loader "^8.1.0"
     hammerjs "^2.0.8"
-    terser-webpack-plugin "^3.0.6"
+    terser-webpack-plugin "^3.1.0"
 
 vue-loader@^15.9.3:
   version "15.9.3"
