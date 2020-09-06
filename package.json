@@ -12,7 +12,7 @@
     "css-loader": "^4.2.2",
     "file-loader": "^6.1.0",
     "kind-of": "^6.0.3",
-    "leaflet": "^1.6.0",
+    "leaflet": "^1.7.1",
     "leaflet-active-area": "^1.1.1",
     "leaflet.fullscreen": "^1.6.0",
     "set-value": "^3.0.2",
