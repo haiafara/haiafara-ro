@@ -17,7 +17,7 @@
     "leaflet.fullscreen": "^1.6.0",
     "set-value": "^3.0.2",
     "style-loader": "^1.2.1",
-    "tailwindcss": "^1.8.5",
+    "tailwindcss": "^1.8.6",
     "typescript": "^4.0.2",
     "vue": "^2.6.12",
     "vue-it-bigger": "^0.0.3",
