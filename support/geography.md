@@ -5,7 +5,10 @@
 ```ruby
 zone = Zone.first
 factory = RGeo::Geographic.spherical_factory(srid: 4326)
+# Baia Sprie
 bounding_box = f.parse_wkt('POLYGON ((23.669 47.65, 23.725 47.65, 23.725 47.674, 23.669 47.674, 23.669 47.65))')
+# Baia Mare
+bounding_box = f.parse_wkt('POLYGON ((23.5077 47.6349, 23.6387 47.6349, 23.6387 47.7202, 23.5077 47.7202, 23.5077 47.6349))')
 zone.bounding_box = bounding_box
 zone.save
 ```
