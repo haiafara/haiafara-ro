@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "https://www.haiafara.ro"
+SitemapGenerator::Sitemap.default_host = 'https://www.haiafara.ro'
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
