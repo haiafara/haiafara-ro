@@ -21,6 +21,10 @@ AllCops:
 Metrics/BlockLength:
   ExcludedMethods: ['describe', 'context']
 
+Naming/FileName:
+  Exclude:
+    - 'Capfile'
+
 Style/BlockComments:
   Exclude:
     - 'spec/spec_helper.rb'
