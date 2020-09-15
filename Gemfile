@@ -60,6 +60,7 @@ gem 'rgeo-geojson'
 gem 'shrine', '~> 3.2'
 gem 'sidekiq'
 gem 'sitemap_generator'
+gem 'whenever', require: false
 
 gem 'underpass'
 
