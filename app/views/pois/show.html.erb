@@ -1,4 +1,4 @@
 <div id='app'>
   <h1><%= @poi.name %></h1>
-  <p><%= @poi.description %></p>
+  <%= @poi.description_html.html_safe %>
 </div>

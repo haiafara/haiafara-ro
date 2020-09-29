@@ -21,5 +21,10 @@ FactoryBot.define do
         '0020000001000010e64037b33d07c84b5e4047d5ef73c0c1fd'
       end
     end
+    trait :with_description_html do
+      sequence :description_html do |n|
+        "Test POI Description HTML #{n}"
+      end
+    end
   end
 end
