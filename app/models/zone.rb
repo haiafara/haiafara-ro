@@ -20,4 +20,13 @@ class Zone < ApplicationRecord
     SQL
     select('*').select(query)
   }
+
+  before_save :set_description_html
+
+  private
+
+  def set_description_html
+    markdown = Redcarpet::Markdown.new(HaiafaraFlavoredMarkdown)
+    self.description_html = markdown.render(description.to_s.html_safe)
+  end
 end
