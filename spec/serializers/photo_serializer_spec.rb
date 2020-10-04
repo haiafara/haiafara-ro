@@ -7,7 +7,7 @@ describe PhotoSerializer do
 
   let(:thumbnail_image_url) { Faker::Internet.url }
   let(:large_image_url) { Faker::Internet.url }
-  let(:photo) { build(:photo, photoable: build(:poi)) }
+  let(:photo) { build(:photo, :with_description_html, photoable: build(:poi)) }
 
   before do
     allow(Photo).to receive(:new).and_return(photo)
@@ -42,8 +42,8 @@ describe PhotoSerializer do
         expect(attributes['name']).to eq(photo.name)
       end
 
-      it 'has the correct description attribute' do
-        expect(attributes['description']).to eq(photo.description)
+      it 'has the correct description_html attribute' do
+        expect(attributes['description_html']).to eq(photo.description_html)
       end
 
       it 'has the correct thumbnail attribute' do
