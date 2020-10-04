@@ -1,6 +1,6 @@
 <div id='app'>
   <h1><%= @zone.name %></h1>
-  <p><%= @zone.description_html.html_safe %></p>
+  <p><%= @zone.description_html&.html_safe %></p>
   <% if @zone.pois.recommended %>
   <p>Puncte de interes recomandate</p>
   <ul>
