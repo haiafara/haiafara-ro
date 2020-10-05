@@ -8217,15 +8217,15 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
 
-vue-it-bigger@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/vue-it-bigger/-/vue-it-bigger-0.0.5.tgz#4f94305ad0cb2bd7084a3fe04a4dc5cc21cc6fd9"
-  integrity sha512-dfs8350SXh89xAt+a9Y5Np3Mq1rA0wrFjBylZMD4y4ZnGXVI52uWba2HE12frsnMOYj/+H148FLwc71fKQttNQ==
+vue-it-bigger@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/vue-it-bigger/-/vue-it-bigger-0.1.0.tgz#bf135981ff02837341beb9f359ea6fb188a3031d"
+  integrity sha512-5rHEKB2Bi5JtADmY8lhufqY5sgP0pahW/3mxXNhMfGpVZtPJKkJdFse5UngXA3ba4i6o5yQx5h2Wvtv5URfUhQ==
   dependencies:
     "@babel/runtime" "^7.11.2"
     babel-loader "^8.1.0"
     hammerjs "^2.0.8"
-    terser-webpack-plugin "^4.1.0"
+    terser-webpack-plugin "^4.2.2"
 
 vue-loader@^15.9.3:
   version "15.9.3"

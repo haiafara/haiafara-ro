@@ -5,7 +5,16 @@
       :media="images"
       :show-caption="true"
       :show-light-box="false"
-    />
+    >
+      <template v-slot:customCaption="slotProps">
+        <div>
+          <p>{{ slotProps.currentMedia.name }}</p>
+          <!-- eslint-disable vue/no-v-html -->
+          <span v-html="slotProps.currentMedia.description_html" />
+          <!-- eslint-enable vue/no-v-html -->
+        </div>
+      </template>
+    </LightBox>
   </div>
 </template>
 

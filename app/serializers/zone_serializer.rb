@@ -3,7 +3,7 @@
 class ZoneSerializer
   include FastJsonapi::ObjectSerializer
   set_id :slug
-  attributes :name, :description
+  attributes :name, :description_html
   attribute :bounds do |object|
     bb = RGeo::Cartesian::BoundingBox.create_from_geometry(object.bounding_box)
     # now, why wouldn't it be reversed

@@ -5,7 +5,7 @@ require 'rails_helper'
 describe ZoneSerializer do
   subject { JSON.parse(described_class.new(zone).serialized_json) }
 
-  let(:zone) { build(:zone) }
+  let(:zone) { build(:zone, :with_description_html) }
 
   describe 'data' do
     let(:data) { subject['data'] }
@@ -29,8 +29,8 @@ describe ZoneSerializer do
         expect(attributes['name']).to eq(zone.name)
       end
 
-      it 'has the correct description attribute' do
-        expect(attributes['description']).to eq(zone.description)
+      it 'has the correct description_html attribute' do
+        expect(attributes['description_html']).to eq(zone.description_html)
       end
 
       it 'has the correct bounds attribute' do

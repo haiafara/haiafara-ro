@@ -3,7 +3,7 @@
 class POISerializer
   include FastJsonapi::ObjectSerializer
   set_id :slug
-  attributes :name, :description
+  attributes :name, :description_html
   attribute :shape do |object|
     RGeo::GeoJSON.encode(object.shape)
   end

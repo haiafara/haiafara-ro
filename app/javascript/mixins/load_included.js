@@ -30,7 +30,8 @@ export const load_included = {
         this.photos.push({
           thumb: attributes.thumbnail,
           src: attributes.large,
-          caption: attributes.name + '<br>' + attributes.description
+          name: attributes.name,
+          description_html: attributes.description_html
         })
       })
     }

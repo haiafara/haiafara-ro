@@ -5,7 +5,7 @@ require 'rails_helper'
 describe POISerializer do
   subject { JSON.parse(described_class.new(poi).serialized_json) }
 
-  let(:poi) { build(:poi, :point) }
+  let(:poi) { build(:poi, :point, :with_description_html) }
 
   describe 'data' do
     let(:data) { subject['data'] }
@@ -30,7 +30,7 @@ describe POISerializer do
       end
 
       it 'has the correct description attribute' do
-        expect(attributes['description']).to eq(poi.description)
+        expect(attributes['description_html']).to eq(poi.description_html)
       end
 
       it 'has the correct shape attribute' do

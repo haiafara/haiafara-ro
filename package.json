@@ -20,7 +20,7 @@
     "tailwindcss": "^1.8.10",
     "typescript": "^4.0.3",
     "vue": "^2.6.12",
-    "vue-it-bigger": "^0.0.5",
+    "vue-it-bigger": "0.1.0",
     "vue-loader": "^15.9.3",
     "vue-router": "^3.4.5",
     "vue-template-compiler": "^2.6.12",
