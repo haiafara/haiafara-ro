@@ -58,7 +58,7 @@ gem 'friendly_id', '~> 5.4.0'
 gem 'image_processing', '~> 1.8'
 gem 'redcarpet'
 gem 'rgeo-geojson'
-gem 'shrine', '~> 3.2'
+gem 'shrine', '~> 3.3'
 gem 'sidekiq'
 gem 'sitemap_generator'
 gem 'whenever', require: false
