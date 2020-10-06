@@ -9,6 +9,7 @@ class Zone < ApplicationRecord
   belongs_to :region
   has_many :photos, as: :photoable
   has_and_belongs_to_many :pois, class_name: 'POI'
+  has_and_belongs_to_many :tracks
 
   scope :with_expanded_bounding_box, lambda {
     query = <<-SQL.squish

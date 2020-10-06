@@ -2,20 +2,23 @@
 
 Rails.application.routes.draw do
   namespace :admin do
-    resources :regions
-    resources :zones
-    resources :pois
     resources :photos
+    resources :pois
+    resources :regions
+    resources :tracks
+    resources :zones
     root to: 'regions#index'
   end
 
   namespace :api, defaults: { format: :json } do
-    resources :zones, only: [:show]
     resources :pois, only: [:show]
+    resources :tracks, only: [:show]
+    resources :zones, only: [:show]
   end
 
-  resources :zones, only: [:show], path: 'unde'
   resources :pois, only: [:show], path: 'pdi'
+  resources :tracks, only: [:show], path: 'traseu'
+  resources :zones, only: [:show], path: 'unde'
 
   get 'pages/home'
   get 'pages/no_zone'

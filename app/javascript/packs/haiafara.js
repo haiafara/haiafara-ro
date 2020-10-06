@@ -10,6 +10,7 @@ import App from 'App.vue'
 import Home from 'Home.vue'
 import Zone from 'Zone.vue'
 import POI from 'POI.vue'
+import Track from 'Track.vue'
 
 import 'packs/haiafara.css'
 
@@ -21,7 +22,8 @@ Vue.use(VueRouter)
 const routes = [
   { path: '/', name: 'home', component: Home },
   { path: '/unde/:id', name: 'zone', component: Zone },
-  { path: '/pdi/:id', name: 'poi', component: POI }
+  { path: '/pdi/:id', name: 'poi', component: POI },
+  { path: '/traseu/:id', name: 'track', component: Track }
 ]
 
 const router = new VueRouter({

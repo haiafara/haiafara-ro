@@ -11,7 +11,7 @@ module ZoneLoader
     @zone = Zone.includes(:pois).friendly.find(params[:id])
     @resource_json = ZoneSerializer.new(
       @zone,
-      include: %i[pois photos]
+      include: %i[photos pois tracks]
     ).serialized_json
   end
 end

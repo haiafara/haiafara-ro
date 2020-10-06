@@ -12,5 +12,8 @@ class ZoneSerializer
   has_many :pois, id_method_name: :slug do |object|
     object.pois.recommended
   end
+  has_many :tracks, id_method_name: :slug do |object|
+    object.tracks.recommended
+  end
   has_many :photos
 end
