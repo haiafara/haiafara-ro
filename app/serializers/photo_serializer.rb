@@ -3,7 +3,7 @@
 class PhotoSerializer
   include FastJsonapi::ObjectSerializer
   set_id :id
-  attributes :name, :description
+  attributes :name, :description_html
   attribute :thumbnail do |object|
     object.image_url(:thumbnail)
   end

@@ -5,9 +5,12 @@
     >
       {{ title }}
     </h1>
-    <div class="mb-2">
-      {{ description }}
-    </div>
+    <!-- eslint-disable vue/no-v-html -->
+    <div
+      class="mb-2"
+      v-html="description_html"
+    />
+    <!-- eslint-enable vue/no-v-html -->
     <haiafara-photo-gallery
       v-if="photos.length"
       :photos="photos"
@@ -40,7 +43,7 @@
     data() {
       return {
         title: '',
-        description: '',
+        description_html: '',
         relationships: null,
         included: null,
         pois: [],
@@ -73,7 +76,7 @@
           eventBus.$emit('mapFitBounds', json.data.attributes.bounds)
 
           this.title = json.data.attributes.name
-          this.description = json.data.attributes.description
+          this.description_html = json.data.attributes.description_html
           this.pois = []
           this.photos = []
 

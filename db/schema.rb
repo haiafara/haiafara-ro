@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_02_191851) do
+ActiveRecord::Schema.define(version: 2020_09_21_061915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_09_02_191851) do
     t.bigint "photoable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description_html"
     t.index ["photoable_type", "photoable_id"], name: "index_photos_on_photoable_type_and_photoable_id"
   end
 
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(version: 2020_09_02_191851) do
     t.datetime "updated_at", null: false
     t.text "overpass_query"
     t.boolean "recommended", default: false
+    t.text "description_html"
   end
 
   create_table "pois_zones", id: false, force: :cascade do |t|
@@ -108,6 +110,7 @@ ActiveRecord::Schema.define(version: 2020_09_02_191851) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
+    t.text "description_html"
     t.index ["region_id"], name: "index_zones_on_region_id"
   end
 

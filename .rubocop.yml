@@ -20,6 +20,12 @@ AllCops:
 
 Metrics/BlockLength:
   ExcludedMethods: ['describe', 'context']
+  Exclude:
+    - 'spec/factories/**/*.rb'
+
+Naming/FileName:
+  Exclude:
+    - 'Capfile'
 
 Style/BlockComments:
   Exclude:
