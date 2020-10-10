@@ -10,7 +10,7 @@
     "caniuse-lite": "^1.0.30001146",
     "css-element-queries": "^1.2.3",
     "css-loader": "^4.3.0",
-    "file-loader": "^6.1.0",
+    "file-loader": "^6.1.1",
     "kind-of": "^6.0.3",
     "leaflet": "^1.7.1",
     "leaflet-active-area": "^1.1.1",
