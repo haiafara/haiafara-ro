@@ -2,10 +2,10 @@
   "name": "haiafara",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.12.9",
+    "@babel/core": "^7.12.10",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/plugin-transform-runtime": "^7.12.0",
-    "@babel/preset-env": "^7.12.7",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.10",
     "@rails/webpacker": "^5.2.1",
     "caniuse-lite": "^1.0.30001165",
     "css-element-queries": "^1.2.3",
