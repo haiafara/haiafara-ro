@@ -6120,10 +6120,10 @@ leaflet.fullscreen@^1.6.0:
   resolved "https://registry.yarnpkg.com/leaflet.fullscreen/-/leaflet.fullscreen-1.6.0.tgz#daad9a6e07c8bdbca8e5af7e3d50272d31b0226a"
   integrity sha512-Mr6STMeyKSfJ1CsKFcPZOm425LOe0c/6EHh0AK93GiTvteTAMFmO/oFDNe+0p1mk4+8yeGLcYgaXTSzPveEGhA==
 
-leaflet@^1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.7.1.tgz#10d684916edfe1bf41d688a3b97127c0322a2a19"
-  integrity sha512-/xwPEBidtg69Q3HlqPdU3DnrXQOvQU/CCHA1tcDQVzOwm91YMYaILjNp7L4Eaw5Z4sOYdbBz6koWyibppd8Zqw==
+leaflet@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.9.1.tgz#73c3c31233f5bc69ad3dd681e67860ba28c87291"
+  integrity sha512-5FcDAMTLAuOq0RisQQbTFatl8Sl4bM0gMrBfuHbl7CYbYJv45BfCS8oU3T644MLjleBq1Ncq541QEA1pqUGTFA==
 
 levn@^0.4.1:
   version "0.4.1"
