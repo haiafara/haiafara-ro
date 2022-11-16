@@ -1,10 +1,11 @@
 pipeline {
   environment {
     DATABASE_URL = credentials('database-url')
+    RAILS_MASTER_KEY = credentials('rails-master-key')
   }
   agent {
     dockerfile {
-      args '-e DATABASE_URL=$DATABASE_URL'
+      args '-e DATABASE_URL=$DATABASE_URL -e RAILS_MASTER_KEY=$RAILS_MASTER_KEY'
       additionalBuildArgs "-t haiafara-jenkins-build:${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
     }
   }
