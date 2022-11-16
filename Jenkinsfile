@@ -12,8 +12,9 @@ pipeline {
   stages {
     stage('test') {
       steps {
-        sh 'bundle exec rails db:test:prepare RAILS_ENV=test'
-        sh 'NODE_ENV=test bundle exec rails webpacker:compile'
+        sh 'RAILS_ENV=test bundle exec rails db:test:prepare'
+        sh 'ln -s /usr/src/app/node_modules node_modules'
+        sh 'RAILS_ENV=test bundle exec rails webpacker:compile'
         sh 'bundle exec rspec'
       }   
     }
