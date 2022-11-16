@@ -11,6 +11,7 @@ pipeline {
   stages {
     stage('test') {
       steps {
+        sh 'bundle exec rails db:setup'
         sh 'bundle exec rspec'
       }   
     }
