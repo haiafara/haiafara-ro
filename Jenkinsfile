@@ -12,7 +12,7 @@ pipeline {
   stages {
     stage('test') {
       steps {
-        sh 'bundle exec rails db:setup RAILS_ENV=test'
+        sh 'bundle exec rails db:test:prepare RAILS_ENV=test'
         sh 'bundle exec rspec'
       }   
     }
