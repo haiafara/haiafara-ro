@@ -5,7 +5,7 @@ pipeline {
   }
   agent {
     dockerfile {
-      args '-e DATABASE_URL=$DATABASE_URL -e RAILS_MASTER_KEY=$RAILS_MASTER_KEY'
+      args '-e DATABASE_URL=$DATABASE_URL -e RAILS_MASTER_KEY=$RAILS_MASTER_KEY -e DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL=true'
       additionalBuildArgs "-t haiafara-jenkins-build:${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
     }
   }
