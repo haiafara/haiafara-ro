@@ -13,7 +13,7 @@ pipeline {
     stage('test') {
       steps {
         sh 'bundle exec rails db:test:prepare RAILS_ENV=test'
-        sh 'bundle exec rails webpacker:compile'
+        sh 'NODE_ENV=test bundle exec rails webpacker:compile'
         sh 'bundle exec rspec'
       }   
     }
