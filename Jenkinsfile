@@ -15,6 +15,7 @@ pipeline {
         sh 'bundle exec rails db:test:prepare'
         sh 'ln -s /usr/src/app/node_modules node_modules'
         sh 'bundle exec rails webpacker:compile'
+        sh 'sed -i "s/haiafara_test/haiafara_test_$EXECUTOR_NUMBER/g" config/database.yml'
         sh 'bundle exec rspec'
       }   
     }
