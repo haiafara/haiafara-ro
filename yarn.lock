@@ -3584,10 +3584,10 @@ caniuse-lite@^1.0.30001400:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001420.tgz#f62f35f051e0b6d25532cf376776d41e45b47ef6"
   integrity sha512-OnyeJ9ascFA9roEj72ok2Ikp7PHJTKubtEJIQ/VK3fdsS50q4KWy+Z5X0A1/GswEItKX0ctAp8n4SYDE7wTu6A==
 
-caniuse-lite@^1.0.30001435:
-  version "1.0.30001435"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001435.tgz#502c93dbd2f493bee73a408fe98e98fb1dad10b2"
-  integrity sha512-kdCkUTjR+v4YAJelyiDTqiu82BDr4W4CP5sgTA0ZBmqn30XfS2ZghPLMowik9TPhS+psWJiUNxsqLyurDbmutA==
+caniuse-lite@^1.0.30001436:
+  version "1.0.30001436"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001436.tgz#22d7cbdbbbb60cdc4ca1030ccd6dea9f5de4848b"
+  integrity sha512-ZmWkKsnC2ifEPoWUvSAIGyOYwT+keAaaWPHiQ9DfMqS1t6tfuyFYoWR78TeZtznkEQ64+vGXH9cZrElwR2Mrxg==
 
 case-sensitive-paths-webpack-plugin@^2.4.0:
   version "2.4.0"
