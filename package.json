@@ -6,7 +6,7 @@
     "@babel/plugin-proposal-class-properties": "^7.16.7",
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.20.2",
-    "@rails/webpacker": "^5.4.3",
+    "@rails/webpacker": "^5.4.4",
     "caniuse-lite": "^1.0.30001451",
     "css-element-queries": "^1.2.3",
     "css-loader": "^4.3.0",
