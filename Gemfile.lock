@@ -477,7 +477,7 @@ DEPENDENCIES
   whenever
 
 RUBY VERSION
-   ruby 2.7.6p219
+   ruby 2.7.8
 
 BUNDLED WITH
    2.1.4
